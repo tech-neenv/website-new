@@ -60,14 +60,24 @@ export default function ContactPage() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
 
-        // In production, you would send this to your backend or email service
-        console.log('Form submitted:', formData);
+            if (!response.ok) {
+                throw new Error('Failed to send message');
+            }
 
-        setIsSubmitting(false);
-        setIsSubmitted(true);
+            setIsSubmitted(true);
+        } catch (error) {
+            console.error('Submit error:', error);
+            alert('Something went wrong. Please try again or email us directly at Info@neenvfin.com');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
