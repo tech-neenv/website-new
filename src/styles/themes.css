@@ -348,6 +348,6 @@ h4, .h4 {
     --text-4xl: 1.5rem;      /* 24px */
     --text-5xl: 1.875rem;    /* 30px */
     --text-6xl: 2.25rem;     /* 36px */
-    --container-padding: 1rem;
+    --container-padding: calc(1rem + 10px);
   }
 }
