@@ -174,8 +174,7 @@
 
     .btnPrimary,
     .btnSecondary {
-        width: 100%;
-        max-width: 260px;
+        width: 80%;
         justify-content: center;
     }
 

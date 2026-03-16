@@ -207,26 +207,27 @@
     }
 
     .column {
-        text-align: center;
+        text-align: left;
     }
 
     .columnLinks {
-        align-items: center;
+        align-items: flex-start;
     }
 
     .contactItem {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .footerBottom {
         flex-direction: column;
         gap: var(--space-4);
-        text-align: center;
+        text-align: left;
+        align-items: flex-start;
     }
 
     .legalLinks {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
         gap: var(--space-4);
     }
 }

@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 type ContactForm = {
     firstName: string;
     lastName: string;
@@ -117,8 +115,11 @@ function buildEmailHtml(data: ContactForm): string {
     `;
 }
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: NextRequest) {
     try {
+        const resend = new Resend(process.env.RESEND_API_KEY);
         const data: ContactForm = await request.json();
 
         // Basic validation
