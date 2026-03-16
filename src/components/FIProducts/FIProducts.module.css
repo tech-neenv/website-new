@@ -1,0 +1,194 @@
+.products {
+    padding: var(--space-20) 0;
+    background: transparent;
+    position: relative;
+}
+
+.products::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--divider-gradient);
+}
+
+.header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-12);
+}
+
+.title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    line-height: var(--leading-snug);
+    letter-spacing: -0.02em;
+}
+
+.productsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+    align-items: stretch;
+}
+
+.productCard {
+    position: relative;
+    padding: var(--space-6);
+    background: var(--glass-bg-strong);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card-premium);
+    transition: all var(--duration-base) var(--ease-out);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(26, 45, 122, 0.06);
+    overflow: hidden;
+}
+
+.productCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(26, 45, 122, 0.15), rgba(93, 113, 196, 0.15));
+    transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.productCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(26, 45, 122, 0.1);
+}
+
+.productCard.featured {
+    border-color: rgba(26, 45, 122, 0.15);
+}
+
+.productCard.featured::before {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+    opacity: 1;
+    height: 3px;
+}
+
+.productTitle {
+    font-size: var(--text-base);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
+    letter-spacing: -0.01em;
+}
+
+.productSubtitle {
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-5);
+    line-height: var(--leading-relaxed);
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-6);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.features li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+.checkIcon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+}
+
+.productCard.featured .checkIcon {
+    color: var(--color-primary);
+}
+
+.ctaButton {
+    display: block;
+    width: 100%;
+    padding: var(--space-3);
+    text-align: center;
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    border-radius: var(--radius-lg);
+    transition: all var(--duration-base) var(--ease-out);
+    margin-top: auto;
+    text-decoration: none;
+}
+
+.productCard .ctaButton {
+    background: rgba(26, 45, 122, 0.04);
+    color: var(--text-primary);
+    border: 1px solid rgba(26, 45, 122, 0.1);
+}
+
+.productCard .ctaButton:hover {
+    background: rgba(26, 45, 122, 0.08);
+    border-color: rgba(26, 45, 122, 0.15);
+}
+
+.productCard.featured .ctaButton {
+    background: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 16px rgba(26, 45, 122, 0.2);
+}
+
+.productCard.featured .ctaButton:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 45, 122, 0.3);
+}
+
+@media (max-width: 1024px) {
+    .productsGrid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin: 0 auto;
+        gap: var(--space-4);
+    }
+
+    .productCard.featured {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .products {
+        padding: var(--space-16) 0;
+    }
+
+    .title {
+        font-size: var(--text-xl);
+    }
+
+    .productCard {
+        padding: var(--space-5);
+    }
+
+    .productTitle {
+        font-size: var(--text-sm);
+    }
+}

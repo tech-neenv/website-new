@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Clear Theme Cache</title>
+</head>
+
+<body>
+    <h1>Clearing theme cache...</h1>
+    <script>
+        localStorage.removeItem('neenv-theme');
+        document.body.innerHTML += '<p>Theme cache cleared! You can close this page.</p>';
+    </script>
+</body>
+
+</html>

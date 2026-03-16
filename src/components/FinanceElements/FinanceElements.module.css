@@ -1,0 +1,174 @@
+/* ===== FINANCE DECORATIVE ELEMENTS ===== */
+.financeElements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.element {
+    position: absolute;
+    color: rgba(26, 45, 122, 0.04);
+    opacity: 1;
+}
+
+/* ---- Row 1: Top area (0-15%) ---- */
+
+/* Rupee — top far-left */
+.el1 {
+    top: 3%;
+    left: 2%;
+    transform: rotate(-12deg);
+}
+
+/* Dot cluster — top right offset */
+.el2 {
+    top: 8%;
+    right: 6%;
+    transform: rotate(8deg);
+}
+
+/* Bar chart — upper right edge */
+.el3 {
+    top: 14%;
+    right: 1.5%;
+    transform: rotate(-5deg);
+}
+
+/* Percentage — left, slightly lower */
+.el4 {
+    top: 11%;
+    left: 5.5%;
+    transform: rotate(6deg);
+}
+
+/* ---- Row 2: Upper-mid (18-32%) ---- */
+
+/* Pie chart — left side */
+.el5 {
+    top: 20%;
+    left: 1%;
+    transform: rotate(-8deg);
+}
+
+/* Small rupee — right mid high */
+.el6 {
+    top: 25%;
+    right: 3%;
+    transform: rotate(15deg);
+}
+
+/* Shield — left offset */
+.el7 {
+    top: 30%;
+    left: 4.5%;
+    transform: rotate(-3deg);
+}
+
+/* Trend dots — right scattered */
+.el8 {
+    top: 28%;
+    right: 7%;
+    transform: rotate(4deg);
+}
+
+/* ---- Row 3: Mid section (35-52%) ---- */
+
+/* Growth arrow — right */
+.el9 {
+    top: 38%;
+    right: 1%;
+    transform: rotate(-6deg);
+}
+
+/* Invoice — left */
+.el10 {
+    top: 42%;
+    left: 2.5%;
+    transform: rotate(4deg);
+}
+
+/* Coin stack — right lower-mid */
+.el11 {
+    top: 48%;
+    right: 4%;
+    transform: rotate(-10deg);
+}
+
+/* Plus cross — left tiny accent */
+.el12 {
+    top: 36%;
+    left: 7%;
+    transform: rotate(20deg);
+}
+
+/* ---- Row 4: Lower-mid (55-72%) ---- */
+
+/* Wallet — left */
+.el13 {
+    top: 58%;
+    left: 1.5%;
+    transform: rotate(7deg);
+}
+
+/* Small bar chart — right */
+.el14 {
+    top: 55%;
+    right: 2%;
+    transform: rotate(-8deg);
+}
+
+/* Diamond accent — right mid */
+.el15 {
+    top: 65%;
+    right: 5.5%;
+    transform: rotate(0deg);
+}
+
+/* ---- Row 5: Lower area (72-90%) ---- */
+
+/* Rupee — right bottom */
+.el16 {
+    top: 75%;
+    right: 2.5%;
+    transform: rotate(10deg);
+}
+
+/* Handshake — left lower */
+.el17 {
+    top: 72%;
+    left: 3%;
+    transform: rotate(-5deg);
+}
+
+/* Tiny circles — right */
+.el18 {
+    top: 82%;
+    right: 6%;
+    transform: rotate(12deg);
+}
+
+/* Donut chart — left bottom */
+.el19 {
+    top: 85%;
+    left: 1.5%;
+    transform: rotate(-15deg);
+}
+
+/* Graph line — bottom area */
+.el20 {
+    top: 92%;
+    left: 4%;
+    transform: rotate(3deg);
+}
+
+/* Hide on small screens where margins don't exist */
+@media (max-width: 1200px) {
+    .financeElements {
+        display: none;
+    }
+}

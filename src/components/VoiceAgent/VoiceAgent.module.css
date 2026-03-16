@@ -1,0 +1,456 @@
+.voiceAgent {
+    position: relative;
+    padding: var(--space-24) 0;
+    background: var(--color-dark-soft);
+    overflow: hidden;
+}
+
+.bgGlow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.bgGlow1 {
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+}
+
+.bgGlow2 {
+    bottom: -200px;
+    right: -100px;
+    background: var(--color-accent);
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-12);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: rgba(79, 70, 229, 0.2);
+    border: 1px solid rgba(79, 70, 229, 0.3);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary-light);
+    margin-bottom: var(--space-4);
+}
+
+.badgeDot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    animation: pulse-glow 2s infinite;
+}
+
+.title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    margin-bottom: var(--space-4);
+}
+
+.titleHighlight {
+    color: var(--color-primary);
+}
+
+.description {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-400);
+    line-height: var(--line-height-relaxed);
+}
+
+.agentContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Voice Interface */
+.voiceInterface {
+    position: relative;
+}
+
+.interfaceCard {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    backdrop-filter: var(--glass-blur);
+    position: relative;
+    overflow: hidden;
+}
+
+.interfaceCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--color-primary);
+}
+
+.interfaceHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+}
+
+.statusDot {
+    width: 10px;
+    height: 10px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    animation: pulse-glow 1.5s infinite;
+}
+
+.statusText {
+    font-size: var(--font-size-sm);
+    color: var(--color-accent);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Waveform Visualizer */
+.waveformContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    margin-bottom: var(--space-6);
+    position: relative;
+}
+
+.waveform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 100%;
+}
+
+.waveBar {
+    width: 4px;
+    background: var(--color-primary);
+    border-radius: var(--radius-full);
+    animation: wave 1.2s ease-in-out infinite;
+}
+
+.waveBar:nth-child(1) {
+    animation-delay: 0s;
+    height: 30%;
+}
+
+.waveBar:nth-child(2) {
+    animation-delay: 0.1s;
+    height: 50%;
+}
+
+.waveBar:nth-child(3) {
+    animation-delay: 0.2s;
+    height: 80%;
+}
+
+.waveBar:nth-child(4) {
+    animation-delay: 0.3s;
+    height: 60%;
+}
+
+.waveBar:nth-child(5) {
+    animation-delay: 0.4s;
+    height: 100%;
+}
+
+.waveBar:nth-child(6) {
+    animation-delay: 0.5s;
+    height: 70%;
+}
+
+.waveBar:nth-child(7) {
+    animation-delay: 0.6s;
+    height: 90%;
+}
+
+.waveBar:nth-child(8) {
+    animation-delay: 0.7s;
+    height: 50%;
+}
+
+.waveBar:nth-child(9) {
+    animation-delay: 0.8s;
+    height: 70%;
+}
+
+.waveBar:nth-child(10) {
+    animation-delay: 0.9s;
+    height: 40%;
+}
+
+.waveBar:nth-child(11) {
+    animation-delay: 1s;
+    height: 60%;
+}
+
+.waveBar:nth-child(12) {
+    animation-delay: 1.1s;
+    height: 30%;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: scaleY(0.5);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+/* Microphone Button */
+.micButton {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    border-radius: 50%;
+    font-size: 32px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    position: relative;
+    box-shadow: var(--shadow-glow);
+}
+
+.micButton::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 2px solid rgba(79, 70, 229, 0.3);
+    animation: ripple 2s ease-out infinite;
+}
+
+.micButton::after {
+    content: '';
+    position: absolute;
+    inset: -16px;
+    border-radius: 50%;
+    border: 2px solid rgba(79, 70, 229, 0.2);
+    animation: ripple 2s ease-out infinite 0.5s;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.micButton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 60px rgba(79, 70, 229, 0.6);
+}
+
+.micButton.active {
+    background: var(--color-primary);
+}
+
+.micHint {
+    text-align: center;
+    margin-top: var(--space-4);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-400);
+}
+
+/* Chat Interface */
+.chatInterface {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.chatBubble {
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-xl);
+    max-width: 90%;
+    animation: fadeInBubble 0.5s ease-out;
+}
+
+@keyframes fadeInBubble {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.userBubble {
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    align-self: flex-end;
+    border-bottom-right-radius: var(--radius-sm);
+}
+
+.aiBubble {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    align-self: flex-start;
+    border-bottom-left-radius: var(--radius-sm);
+}
+
+.bubbleHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-400);
+}
+
+.aiIcon {
+    width: 20px;
+    height: 20px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.bubbleText {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+}
+
+.typingIndicator {
+    display: flex;
+    gap: 4px;
+    padding: var(--space-3);
+}
+
+.typingDot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.typingDot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typingDot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typingDot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    30% {
+        transform: translateY(-8px);
+        opacity: 1;
+    }
+}
+
+/* Features List */
+.featuresList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+}
+
+.featureTag {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+}
+
+.featureIcon {
+    font-size: var(--font-size-sm);
+}
+
+@media (max-width: 1024px) {
+    .agentContainer {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .voiceInterface {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .waveform {
+        gap: 3px;
+    }
+
+    .waveBar {
+        width: 3px;
+    }
+
+    .micButton {
+        width: 64px;
+        height: 64px;
+        font-size: 24px;
+    }
+}

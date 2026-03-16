@@ -1,0 +1,140 @@
+/* ===== LEGAL PAGE ===== */
+.legalPage {
+    padding-top: 120px;
+    padding-bottom: var(--space-24);
+    background: transparent;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.header {
+    margin-bottom: var(--space-10);
+    text-align: center;
+}
+
+.title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+    letter-spacing: -0.02em;
+}
+
+.lastUpdated {
+    color: var(--text-tertiary);
+    font-size: var(--text-xs);
+}
+
+.content {
+    background: var(--glass-bg-strong);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(26, 45, 122, 0.06);
+    border-radius: var(--radius-xl);
+    padding: var(--space-10);
+    box-shadow: var(--shadow-card-premium);
+    position: relative;
+    overflow: hidden;
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+    opacity: 0.5;
+}
+
+.section {
+    margin-bottom: var(--space-8);
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.sectionTitle {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+.sectionContent {
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+.sectionContent p {
+    margin-bottom: var(--space-4);
+}
+
+.sectionContent p:last-child {
+    margin-bottom: 0;
+}
+
+.list {
+    margin: var(--space-4) 0;
+    padding-left: var(--space-6);
+}
+
+.list li {
+    margin-bottom: var(--space-2);
+    position: relative;
+    padding-left: var(--space-2);
+}
+
+.list li::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * var(--space-4));
+    color: var(--color-primary);
+}
+
+.contactInfo {
+    background: rgba(26, 45, 122, 0.03);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-top: var(--space-4);
+}
+
+.contactInfo p {
+    margin-bottom: var(--space-2);
+}
+
+.contactInfo p:last-child {
+    margin-bottom: 0;
+}
+
+.contactInfo a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+}
+
+.contactInfo a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .legalPage {
+        padding-top: 100px;
+    }
+
+    .content {
+        padding: var(--space-6);
+    }
+
+    .title {
+        font-size: var(--text-3xl);
+    }
+}

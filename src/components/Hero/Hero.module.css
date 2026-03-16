@@ -1,0 +1,411 @@
+/* ===== HERO SECTION ===== */
+.hero {
+    position: relative;
+    padding-top: clamp(7rem, 12vh, 10rem);
+    padding-bottom: var(--space-6);
+    background: transparent;
+    overflow: hidden;
+}
+
+/* Radial glow accents */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(26, 45, 122, 0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(245, 144, 235, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Floating financial elements */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(93, 113, 196, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Indian Flag — subtle vertical gradient on the far right */
+.flagAccent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 220px;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 153, 51, 0.09) 0%,
+        rgba(255, 153, 51, 0.06) 30%,
+        rgba(255, 255, 255, 0.03) 35%,
+        rgba(255, 255, 255, 0.03) 65%,
+        rgba(19, 136, 8, 0.06) 70%,
+        rgba(19, 136, 8, 0.09) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%);
+}
+
+.heroInner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== CONTENT ===== */
+.content {
+    animation: slide-up 0.8s var(--ease-out);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: rgba(26, 45, 122, 0.04);
+    border: 1px solid rgba(26, 45, 122, 0.1);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-6);
+    letter-spacing: 0.03em;
+    backdrop-filter: blur(8px);
+}
+
+.badgeDot {
+    width: 7px;
+    height: 7px;
+    background: var(--color-accent-green);
+    border-radius: 50%;
+    animation: pulse-glow 2s infinite;
+    box-shadow: 0 0 8px rgba(10, 113, 78, 0.4);
+}
+
+.title {
+    font-size: var(--text-5xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin-bottom: var(--space-5);
+}
+
+.highlight {
+    color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.description {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    line-height: var(--leading-normal);
+    margin-bottom: var(--space-8);
+    max-width: 480px;
+}
+
+.actions {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+/* ===== METRICS ROW ===== */
+.metrics {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    margin-top: var(--space-10);
+    padding-top: var(--space-6);
+    border-top: 1px solid rgba(26, 45, 122, 0.08);
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.metricValue {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+.metricLabel {
+    font-size: 0.65rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: var(--font-semibold);
+}
+
+.metricDivider {
+    width: 1px;
+    height: 32px;
+    background: linear-gradient(180deg, transparent, rgba(26, 45, 122, 0.12), transparent);
+}
+
+/* ===== VISUAL GRID ===== */
+.visual {
+    animation: slide-up 0.8s var(--ease-out) 0.15s both;
+}
+
+.visualGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+}
+
+.gridCard {
+    padding: var(--space-5);
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(26, 45, 122, 0.08);
+    border-radius: var(--radius-xl);
+    transition: all var(--duration-base) var(--ease-out);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-card-premium);
+}
+
+.gridCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+    opacity: 0;
+    transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.gridCard:hover {
+    border-color: rgba(26, 45, 122, 0.15);
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-4px);
+}
+
+.gridCard:hover::before {
+    opacity: 1;
+}
+
+.gridCardIcon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, rgba(26, 45, 122, 0.06), rgba(93, 113, 196, 0.08));
+    border: 1px solid rgba(26, 45, 122, 0.08);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--duration-base) var(--ease-out);
+}
+
+/* Colorful icon backgrounds per card */
+.gridCard:nth-child(1) .gridCardIcon {
+    background: linear-gradient(135deg, rgba(26, 45, 122, 0.07), rgba(93, 113, 196, 0.10));
+    border-color: rgba(26, 45, 122, 0.10);
+}
+
+.gridCard:nth-child(2) .gridCardIcon {
+    background: linear-gradient(135deg, rgba(10, 113, 78, 0.06), rgba(13, 141, 96, 0.10));
+    border-color: rgba(10, 113, 78, 0.10);
+}
+
+.gridCard:nth-child(3) .gridCardIcon {
+    background: linear-gradient(135deg, rgba(245, 144, 235, 0.07), rgba(245, 144, 235, 0.12));
+    border-color: rgba(245, 144, 235, 0.10);
+}
+
+.gridCard:nth-child(4) .gridCardIcon {
+    background: linear-gradient(135deg, rgba(212, 160, 18, 0.07), rgba(240, 198, 69, 0.10));
+    border-color: rgba(212, 160, 18, 0.10);
+}
+
+.gridCard:hover .gridCardIcon {
+    transform: scale(1.05);
+}
+
+.gridCard:nth-child(1):hover .gridCardIcon {
+    background: linear-gradient(135deg, rgba(26, 45, 122, 0.10), rgba(93, 113, 196, 0.14));
+    border-color: rgba(26, 45, 122, 0.15);
+}
+
+.gridCard:nth-child(2):hover .gridCardIcon {
+    background: linear-gradient(135deg, rgba(10, 113, 78, 0.10), rgba(13, 141, 96, 0.14));
+    border-color: rgba(10, 113, 78, 0.15);
+}
+
+.gridCard:nth-child(3):hover .gridCardIcon {
+    background: linear-gradient(135deg, rgba(245, 144, 235, 0.12), rgba(245, 144, 235, 0.16));
+    border-color: rgba(245, 144, 235, 0.15);
+}
+
+.gridCard:nth-child(4):hover .gridCardIcon {
+    background: linear-gradient(135deg, rgba(212, 160, 18, 0.12), rgba(240, 198, 69, 0.16));
+    border-color: rgba(212, 160, 18, 0.15);
+}
+
+.gridCardTitle {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+}
+
+.gridCardSub {
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+    letter-spacing: 0.01em;
+}
+
+/* Gold variant */
+.gridCardGold::before {
+    background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+}
+
+.gridCardGold:hover {
+    border-color: rgba(212, 160, 18, 0.15);
+}
+
+/* ===== LOGO BAR ===== */
+.logoBar {
+    margin-top: var(--space-12);
+    padding-top: var(--space-6);
+    border-top: 1px solid rgba(26, 45, 122, 0.06);
+    position: relative;
+    z-index: 1;
+}
+
+.logoBarInner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+.logoBarLabel {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    white-space: nowrap;
+    font-weight: var(--font-medium);
+    letter-spacing: 0.02em;
+}
+
+.logoBarLogos {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    flex-wrap: wrap;
+}
+
+.partnerLogo {
+    height: 26px;
+    width: auto;
+    opacity: 0.35;
+    filter: grayscale(100%);
+    transition: all var(--duration-base) var(--ease-out);
+    object-fit: contain;
+}
+
+.partnerLogo:hover {
+    opacity: 0.75;
+    filter: grayscale(0%);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .heroInner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-10);
+    }
+
+    .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .actions {
+        justify-content: center;
+    }
+
+    .metrics {
+        justify-content: center;
+    }
+
+    .visual {
+        max-width: 440px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 5.5rem;
+    }
+
+    .metrics {
+        gap: var(--space-5);
+    }
+
+    .logoBarInner {
+        flex-direction: column;
+        gap: var(--space-3);
+        text-align: center;
+    }
+
+    .logoBarLogos {
+        justify-content: center;
+        gap: var(--space-5);
+    }
+
+    .visualGrid {
+        gap: var(--space-2);
+    }
+
+    .gridCard {
+        padding: var(--space-4);
+    }
+}
+
+@media (max-width: 480px) {
+    .metrics {
+        flex-wrap: wrap;
+        gap: var(--space-4);
+    }
+
+    .metricDivider {
+        display: none;
+    }
+
+    .metric {
+        min-width: 75px;
+        align-items: center;
+    }
+
+    .partnerLogo {
+        height: 20px;
+    }
+}
