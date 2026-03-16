@@ -50,8 +50,8 @@ const products = [
         icon: <DealerIcon />,
         title: 'Dealer Financing',
         tagline: 'Pre-approved credit lines for your dealer network. OEMs get paid upfront.',
-        highlight: 'Instant',
-        highlightLabel: 'OEM settlement',
+        highlight: 'Pre-Approved',
+        highlightLabel: 'credit lines',
         benefits: [
             'Expand dealer purchasing power',
             'Eliminate Days Sales Outstanding',
@@ -64,8 +64,8 @@ const products = [
         icon: <CapitalIcon />,
         title: 'Working Capital Loan',
         tagline: 'Short-term capital for channel partners. No collateral. No delays.',
-        highlight: '24 hours',
-        highlightLabel: 'approval to disbursal',
+        highlight: 'Collateral-Free',
+        highlightLabel: 'up to ₹3 Cr',
         benefits: [
             'Collateral-free up to ₹3 Cr',
             'Flexible tenure and EMI options',
@@ -78,8 +78,8 @@ const products = [
         icon: <InvoiceIcon />,
         title: 'Factoring',
         tagline: 'Convert receivables to cash. Don\u2019t wait for buyer payment cycles.',
-        highlight: 'Same Day',
-        highlightLabel: 'liquidity on invoices',
+        highlight: 'Non-Recourse',
+        highlightLabel: 'invoice liquidity',
         benefits: [
             'Unlock cash tied in receivables',
             'Non-recourse options available',
