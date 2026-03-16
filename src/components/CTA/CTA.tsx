@@ -27,7 +27,7 @@ const CTA = () => {
                             Capital Should Move as Fast as Commerce
                         </h2>
                         <p className={styles.ctaSubtitle}>
-                            Your supply chain doesn&apos;t wait. Your financing shouldn&apos;t either. Get funded in 48 hours.
+                            Your supply chain doesn&apos;t wait. Your financing shouldn&apos;t either. Get funded in 72 hours.
                         </p>
 
                         <div className={styles.ctaButtons}>
