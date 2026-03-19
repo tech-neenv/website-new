@@ -3,6 +3,7 @@ import '@/styles/themes.css';
 import ScrollAnimationProvider from '@/components/ScrollAnimationProvider';
 import FinanceElements from '@/components/FinanceElements/FinanceElements';
 import { OrganizationSchema } from '@/components/seo/StructuredData';
+import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://www.neenvfin.com'),
@@ -75,6 +76,7 @@ export default function RootLayout({
                 <link rel="manifest" href="/manifest.json" />
             </head>
             <body>
+                <GoogleAnalytics />
                 <OrganizationSchema />
                 <div style={{ position: 'relative' }}>
                     <FinanceElements />
