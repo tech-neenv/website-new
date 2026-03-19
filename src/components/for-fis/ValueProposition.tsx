@@ -13,7 +13,7 @@ const propositions = [
             </svg>
         ),
         title: 'Financial Inclusion at Scale',
-        desc: 'Serve the underserved MSME partners of your corporate clients — meeting priority sector and inclusion mandates.',
+        desc: 'Serve the underserved MSME partners of corporate clients — meeting priority sector and inclusion mandates.',
         color: '#0a714e',
     },
     {
@@ -23,7 +23,7 @@ const propositions = [
             </svg>
         ),
         title: 'Maximize Client Potential',
-        desc: 'Unlock new revenue streams by financing the distributors, dealers and, suppliers of your existing corporate clients.',
+        desc: 'Unlock new revenue streams by financing the distributors, dealers and, suppliers of corporate clients.',
         color: '#1a2d7a',
     },
     {
@@ -72,7 +72,7 @@ const propositions = [
             </svg>
         ),
         title: 'Zero-Tolerance Compliance',
-        desc: 'Founded by seasoned bankers, Neenv maintains rigorous regulatory compliance across every transaction.',
+        desc: 'Founded by seasoned bankers, Neenv is committed to ensure regulatory compliance across every transaction.',
         color: '#1a2d7a',
     },
 ];

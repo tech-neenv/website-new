@@ -8,10 +8,10 @@ import Footer from '@/components/Footer/Footer';
 
 export const metadata: Metadata = {
     title: 'Channel Financing - Neenv',
-    description: 'Enable dealers to grow purchases with Brand Led Credit Facilities. Brands receive upfront payments while dealers settle on flexible terms.',
+    description: 'Enable Channel partners to grow purchases with Brand Led Credit Facilities. Brands receive upfront payments while Channel partners settle on flexible terms.',
     openGraph: {
         title: 'Channel Financing - Neenv',
-        description: 'Brand Led credit facilities for dealers. Brands get paid upfront, dealers repay on flexible terms. Boost sales and strengthen channel relationships.',
+        description: 'Brand Led credit facilities for Channel partners. Brands get paid upfront, Channel partners repay on flexible terms. Boost sales and strengthen channel relationships.',
         type: 'website',
     },
 };
@@ -21,12 +21,12 @@ const howItWorks = {
     steps: [
         {
             title: 'Credit Facility Setup',
-            description: 'Brand Led facility established using dealer\u2019s trade history with the brand.',
+            description: 'Brand Led facility established using Channel partner\u2019s trade history with the brand.',
             icon: <CreditCard size={16} strokeWidth={2} />,
         },
         {
             title: 'Purchase Goods',
-            description: 'Dealer uses Credit Facility to purchase inventory without immediate payment.',
+            description: 'Channel partner uses Credit Facility to purchase inventory without immediate payment.',
             icon: <ShoppingCart size={16} strokeWidth={2} />,
         },
         {
@@ -35,8 +35,8 @@ const howItWorks = {
             icon: <Banknote size={16} strokeWidth={2} />,
         },
         {
-            title: 'Dealer Repays',
-            description: 'Dealer settles dues with the lender on agreed terms.',
+            title: 'Channel partner Repays',
+            description: 'Channel partner settles dues with the lender on agreed terms.',
             icon: <CalendarCheck size={16} strokeWidth={2} />,
         },
     ],
@@ -44,7 +44,7 @@ const howItWorks = {
 
 const benefits = {
     left: {
-        title: 'Key Benefits for Dealers',
+        title: 'Key Benefits for Channel partners',
         items: [
             {
                 headline: 'No Collateral Required',
@@ -65,15 +65,15 @@ const benefits = {
         items: [
             {
                 headline: 'Boost Channel Sales',
-                description: 'Credit-enabled dealers buy more, buy bigger, and buy often. Watch per-dealer revenue climb without adding a single new dealer.',
+                description: 'Credit-enabled Channel partners buy more, buy bigger, and buy often. Watch per-Channel partner revenue climb without adding a single new Channel partner.',
             },
             {
                 headline: 'Faster Collections, Better Cash Cycle',
                 description: 'Get paid upfront by the lender on every order. Your DSO drops to zero on financed transactions.',
             },
             {
-                headline: 'Build Dealer Loyalty That Sticks',
-                description: 'Dealers stay with brands that solve their biggest problem \u2014 working capital. Financing through your network becomes a reason to never leave.',
+                headline: 'Build Channel partner Loyalty That Sticks',
+                description: 'Channel partners stay with brands that solve their biggest problem \u2014 working capital. Financing through your network becomes a reason to never leave.',
             },
         ],
     },
@@ -87,7 +87,7 @@ export default function ChannelFinancingPage() {
                 <ProductHero
                     title="Channel Financing"
                     subtitle="Credit Facility for Channel Partners"
-                    description="A Brand Led credit facility that empowers dealers to increase their purchases while Brand/sellers receive upfront payments. Dealers benefit from extended payment terms, settling their dues at a later date with the financial institution."
+                    description="A Brand Led credit facility that empowers channel partners to increase their purchases while Brand/sellers receive upfront payments. Channel partners benefit from extended payment terms, settling their dues at a later date with the financial institution."
                     flowGraphic={<ChannelFinancingIllustration />}
                 />
                 <ProductDetails howItWorks={howItWorks} benefits={benefits} />

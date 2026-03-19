@@ -11,7 +11,7 @@ const items = [
             </svg>
         ),
         number: '4',
-        label: 'SCF Products',
+        label: 'Product Suite',
         desc: 'Channel Financing, Supplier Financing, Invoice Factoring, and Working Capital Loans.',
         accent: '#1a2d7a',
     },
@@ -26,7 +26,7 @@ const items = [
             </svg>
         ),
         label: 'Intelligent Risk Engine',
-        desc: 'AI-based underwriting with bureau, GST, and bank statement analytics.',
+        desc: 'AI-based underwriting through bureaus, GST, bank statement analytics and other surrogates.',
         accent: '#0a714e',
     },
     {
