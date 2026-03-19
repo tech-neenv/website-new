@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         description: 'Unlocking credit for India\'s brand-led dealer networks. Collateral-free channel financing, working capital loans, factoring, and supplier financing.',
         images: [
             {
-                url: 'https://www.neenvfin.com/images/neenv.png',
+                url: 'https://www.neenvfin.com/images/logos/neenv.png',
                 width: 1200,
                 height: 630,
                 alt: 'Neenv — AI-Native Supply Chain Finance Platform',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Neenv — AI-Native Supply Chain Finance Platform',
         description: 'Unlocking credit for India\'s brand-led dealer networks.',
-        images: ['https://www.neenvfin.com/images/neenv.png'],
+        images: ['https://www.neenvfin.com/images/logos/neenv.png'],
     },
     robots: {
         index: true,
