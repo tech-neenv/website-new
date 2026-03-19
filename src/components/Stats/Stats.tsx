@@ -36,7 +36,7 @@ const stats = [
     },
     {
         icon: <BadgeIndianRupee size={24} strokeWidth={1.5} />,
-        value: 'Up to ₹3 Cr',
+        value: 'Up to ₹2 Cr',
         label: 'Per Channel Partner',
         description: 'Collateral-free limits based on Brand strength',
     },
@@ -62,7 +62,7 @@ const Stats = () => {
                     <span className={styles.badge}>WHY NEENV</span>
                     <h2 className={styles.title}>Infrastructure-Grade Channel Finance</h2>
                     <p className={styles.subtitle}>
-                        Purpose-built for OEM-led ecosystems. Not a generic lending platform with a supply chain label.
+                        Purpose-built for Brand-led ecosystems. Not a generic lending platform with a supply chain label.
                     </p>
                 </div>
 

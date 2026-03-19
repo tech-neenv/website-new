@@ -57,9 +57,9 @@ const Founders = () => {
                                 <Image
                                     src={founder.image}
                                     alt={founder.name}
-                                    width={150}
-                                    height={150}
-                                    sizes="150px"
+                                    width={220}
+                                    height={220}
+                                    sizes="220px"
                                     className={styles.founderImage}
                                 />
                             </div>
@@ -67,11 +67,6 @@ const Founders = () => {
                                 <h3 className={styles.name}>{founder.name}</h3>
                                 <p className={styles.role}>{founder.role}</p>
                                 <p className={styles.summary}>{founder.summary}</p>
-                                <ul className={styles.highlights}>
-                                    {founder.highlights.map((item) => (
-                                        <li key={item} className={styles.highlightItem}>{item}</li>
-                                    ))}
-                                </ul>
                                 <a
                                     href={founder.linkedin}
                                     target="_blank"

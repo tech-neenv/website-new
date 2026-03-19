@@ -44,36 +44,36 @@ const howItWorks = {
 
 const benefits = {
     left: {
-        title: 'Key Benefits for Suppliers',
+        title: 'Key Benefits for Brand',
         items: [
             {
-                headline: 'Paid on Delivery',
-                description: 'Get paid when you deliver, not 90 days later. Cash flow you can plan around.',
+                headline: 'Vendor Loyalty',
+                description: 'Suppliers prioritize brands that solve their cash flow. Early payment makes you the preferred buyer in your category.',
             },
             {
-                headline: 'No New Debt',
-                description: 'Early payment against approved invoices. No loan, no collateral, no interest burden on you.',
+                headline: 'Working Capital Management',
+                description: 'Extend your payment terms without straining vendor relationships. Optimize your own cash cycle while keeping suppliers funded.',
             },
             {
-                headline: 'Scale With Confidence',
-                description: 'Predictable cash flow means you can take on larger orders and invest in production capacity.',
+                headline: 'Continued Supplies from Key Vendors',
+                description: 'Well-funded suppliers deliver on time. Eliminate production gaps caused by vendor cash flow constraints.',
             },
         ],
     },
     right: {
-        title: 'Key Benefits for Brands',
+        title: 'Key Benefits for Vendor',
         items: [
             {
-                headline: 'Better Pricing From Suppliers',
-                description: 'Suppliers price better when they know payment is immediate. Negotiate from strength.',
+                headline: 'Faster Realization of Sales Proceeds',
+                description: 'Get paid when you deliver, not 90 days later. Convert approved invoices to cash within hours.',
             },
             {
-                headline: 'Reliable Supply Chain',
-                description: 'Well-funded suppliers deliver on time. Fewer delays, fewer excuses, fewer production gaps.',
+                headline: 'Lower Cost of Borrowing',
+                description: 'Financing rates Branded to the buyer\u2019s credit profile, not yours. Access capital at significantly lower rates than standalone borrowing.',
             },
             {
-                headline: 'Build Supplier Loyalty That Sticks',
-                description: 'Early payment makes you the preferred buyer. Suppliers prioritize brands that solve their cash flow.',
+                headline: 'No Collateral Needed',
+                description: 'The approved invoice is your credential. No property papers, no fixed deposits, no personal guarantees required.',
             },
         ],
     },

@@ -174,6 +174,11 @@
     margin: 0 auto;
 }
 
+.benefitsGridSingle {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+}
+
 .benefitCard {
     background: #ffffff;
     border: 1px solid rgba(26, 45, 122, 0.08);

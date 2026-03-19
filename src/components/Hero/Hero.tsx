@@ -1,8 +1,84 @@
 'use client';
 
+import { useState, useEffect, useCallback } from 'react';
 import styles from './Hero.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import HeroVisual from '../HeroVisual/HeroVisual';
+
+const PHRASES = [
+    'Unlocking Credit in',
+    'Powering Every Dealer in',
+    'Removing Barriers from',
+    'Fueling Growth Across',
+];
+
+const TYPING_SPEED = 60;
+const DELETE_SPEED = 35;
+const HOLD_DURATION = 2500;
+
+function useTypewriter() {
+    const [phraseIndex, setPhraseIndex] = useState(0);
+    const [displayText, setDisplayText] = useState(PHRASES[0]);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [showCursor, setShowCursor] = useState(true);
+    const [hasStarted, setHasStarted] = useState(false);
+    const [reducedMotion, setReducedMotion] = useState(false);
+
+    useEffect(() => {
+        const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+        setReducedMotion(mq.matches);
+        const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+        mq.addEventListener('change', handler);
+        return () => mq.removeEventListener('change', handler);
+    }, []);
+
+    useEffect(() => {
+        if (reducedMotion) return;
+
+        // First render: hold the initial phrase, then start deleting
+        if (!hasStarted) {
+            const holdTimer = setTimeout(() => {
+                setHasStarted(true);
+                setIsDeleting(true);
+            }, HOLD_DURATION);
+            return () => clearTimeout(holdTimer);
+        }
+
+        const currentPhrase = PHRASES[phraseIndex];
+
+        if (isDeleting) {
+            setShowCursor(false);
+            if (displayText.length === 0) {
+                // Move to next phrase, start typing
+                const nextIndex = (phraseIndex + 1) % PHRASES.length;
+                setPhraseIndex(nextIndex);
+                setIsDeleting(false);
+                setShowCursor(true);
+                return;
+            }
+            const timer = setTimeout(() => {
+                setDisplayText(prev => prev.slice(0, -1));
+            }, DELETE_SPEED);
+            return () => clearTimeout(timer);
+        } else {
+            // Typing
+            if (displayText.length === currentPhrase.length) {
+                // Fully typed — hold then delete
+                const holdTimer = setTimeout(() => {
+                    setIsDeleting(true);
+                }, HOLD_DURATION);
+                return () => clearTimeout(holdTimer);
+            }
+            const timer = setTimeout(() => {
+                setDisplayText(currentPhrase.slice(0, displayText.length + 1));
+            }, TYPING_SPEED);
+            return () => clearTimeout(timer);
+        }
+    }, [displayText, isDeleting, phraseIndex, hasStarted, reducedMotion]);
+
+    return { displayText, showCursor: showCursor && !reducedMotion };
+}
 
 const partnerLogos = [
     { src: '/images/logos/standard-chartered.png', alt: 'Standard Chartered', width: 140 },
@@ -54,6 +130,8 @@ const InvoiceIcon = () => (
 );
 
 const Hero = () => {
+    const { displayText, showCursor } = useTypewriter();
+
     return (
         <section className={styles.hero}>
             {/* Indian Flag Gradient — subtle rightside accent */}
@@ -67,7 +145,11 @@ const Hero = () => {
                     </div>
 
                     <h1 className={styles.title}>
-                        Unlocking Credit in India&apos;s
+                        <span className={styles.typewriterLine}>
+                            {displayText}
+                            {showCursor && <span className={styles.cursor} aria-hidden="true" />}
+                        </span>
+                        India&apos;s
                         <span className={styles.highlight}> Supply Chain</span>
                     </h1>
 
@@ -103,36 +185,7 @@ const Hero = () => {
                 </div>
 
                 <div className={styles.visual}>
-                    <div className={styles.visualGrid}>
-                        <div className={styles.gridCard}>
-                            <div className={styles.gridCardIcon}>
-                                <DealerIcon />
-                            </div>
-                            <span className={styles.gridCardTitle}>Dealer Financing</span>
-                            <span className={styles.gridCardSub}>Credit lines powered by Brand data</span>
-                        </div>
-                        <div className={styles.gridCard}>
-                            <div className={styles.gridCardIcon}>
-                                <CapitalIcon />
-                            </div>
-                            <span className={styles.gridCardTitle}>Working Capital Loan</span>
-                            <span className={styles.gridCardSub}>Flexible short term loans</span>
-                        </div>
-                        <div className={`${styles.gridCard} ${styles.gridCardGold}`}>
-                            <div className={styles.gridCardIcon}>
-                                <InvoiceIcon />
-                            </div>
-                            <span className={styles.gridCardTitle}>Factoring</span>
-                            <span className={styles.gridCardSub}>Discounting of receivables</span>
-                        </div>
-                        <div className={styles.gridCard}>
-                            <div className={styles.gridCardIcon}>
-                                <SupplierIcon />
-                            </div>
-                            <span className={styles.gridCardTitle}>Supplier Financing</span>
-                            <span className={styles.gridCardSub}>Early vendor payments</span>
-                        </div>
-                    </div>
+                    <HeroVisual />
                 </div>
             </div>
 

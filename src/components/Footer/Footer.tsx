@@ -22,7 +22,7 @@ const Footer = () => {
                             />
                         </Link>
                         <p className={styles.brandDescription}>
-                            AI-native supply chain finance platform powering last-mile credit for India&apos;s OEM-led ecosystems. Digital-first. Collateral-free.
+                            AI-native supply chain finance platform powering last-mile credit for India&apos;s Brand-led ecosystems. Digital-first. Collateral-free.
                         </p>
                         {/* <div className={styles.social}>
                             <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
@@ -37,9 +37,9 @@ const Footer = () => {
                     <div className={styles.column}>
                         <h4>Company</h4>
                         <div className={styles.columnLinks}>
-                            <Link href="#about" className={styles.columnLink}>About</Link>
-                            <Link href="#how-it-works" className={styles.columnLink}>How It Works</Link>
-                            <Link href="/for-fis" className={styles.columnLink}>For FIs</Link>
+                            <Link href="/#about" className={styles.columnLink}>About</Link>
+                            <Link href="/#how-it-works" className={styles.columnLink}>How It Works</Link>
+                            <Link href="/for-financial-institutions" className={styles.columnLink}>For FIs</Link>
                         </div>
                     </div>
 

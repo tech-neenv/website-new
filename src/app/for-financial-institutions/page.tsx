@@ -1,16 +1,17 @@
 import { Metadata } from 'next';
 import Header from '@/components/Header/Header';
-import FIHero from '@/components/FIHero/FIHero';
-import FIProducts from '@/components/FIProducts/FIProducts';
-import CTA from '@/components/CTA/CTA';
+import FiHero from '@/components/for-fis/FiHero';
+import ValueProposition from '@/components/for-fis/ValueProposition';
+import WhatWeBring from '@/components/for-fis/WhatWeBring';
+import FiCTA from '@/components/for-fis/FiCTA';
 import Footer from '@/components/Footer/Footer';
 
 export const metadata: Metadata = {
-    title: 'For Financial Institutions - Neenv',
-    description: 'Comprehensive Digital SCF Infrastructure for Financial Institutions. Build scalable Supply Chain Finance portfolios and manage the full lifecycle effortlessly.',
+    title: 'For Banks & NBFCs - Neenv',
+    description: 'Partner with Neenv to access India\'s MSME ecosystem through a fully managed channel finance platform. AI-powered underwriting, 4 SCF products, seamless integration.',
     openGraph: {
-        title: 'For Financial Institutions - Neenv',
-        description: 'Comprehensive Digital SCF Infrastructure for Financial Institutions. Efficient, Scalable, and Primed for Success.',
+        title: 'For Banks & NBFCs - Neenv',
+        description: 'Your gateway to India\'s MSME ecosystem. Managed channel finance platform with AI-powered underwriting.',
         type: 'website',
     },
 };
@@ -20,9 +21,10 @@ export default function ForFinancialInstitutionsPage() {
         <>
             <Header />
             <main>
-                <FIHero />
-                <FIProducts />
-                <CTA />
+                <FiHero />
+                <ValueProposition />
+                <WhatWeBring />
+                <FiCTA />
             </main>
             <Footer />
         </>

@@ -8,10 +8,10 @@ import Footer from '@/components/Footer/Footer';
 
 export const metadata: Metadata = {
     title: 'Dealer Financing - Neenv',
-    description: 'Enable dealers to grow purchases with pre-approved credit lines. Brands receive upfront payments while dealers settle on flexible terms.',
+    description: 'Enable dealers to grow purchases with Brand Led credit lines. Brands receive upfront payments while dealers settle on flexible terms.',
     openGraph: {
         title: 'Dealer Financing - Neenv',
-        description: 'Pre-approved credit facilities for dealers. Brands get paid upfront, dealers repay on flexible terms. Boost sales and strengthen channel relationships.',
+        description: 'Brand Led credit facilities for dealers. Brands get paid upfront, dealers repay on flexible terms. Boost sales and strengthen channel relationships.',
         type: 'website',
     },
 };
@@ -21,7 +21,7 @@ const howItWorks = {
     steps: [
         {
             title: 'Credit Line Setup',
-            description: 'Pre-approved facility established using dealer\u2019s trade history with the brand.',
+            description: 'Brand Led facility established using dealer\u2019s trade history with the brand.',
             icon: <CreditCard size={16} strokeWidth={2} />,
         },
         {
@@ -36,7 +36,7 @@ const howItWorks = {
         },
         {
             title: 'Dealer Repays',
-            description: 'Dealer settles dues with the lender on agreed terms. EMI or bullet.',
+            description: 'Dealer settles dues with the lender on agreed terms.',
             icon: <CalendarCheck size={16} strokeWidth={2} />,
         },
     ],
@@ -48,7 +48,7 @@ const benefits = {
         items: [
             {
                 headline: 'No Collateral Required',
-                description: 'Your anchor relationship is your credential. No property papers, no fixed deposits.',
+                description: 'Your Brand relationship is your credential. No property papers, no fixed deposits.',
             },
             {
                 headline: 'Instant Liquidity When You Need It',
@@ -87,7 +87,7 @@ export default function DealerFinancingPage() {
                 <ProductHero
                     title="Dealer Financing"
                     subtitle="Credit Facility for Channel Partners"
-                    description="A pre-approved credit facility that empowers dealers to increase their purchases while Brand/sellers receive upfront payments. Dealers benefit from extended payment terms, settling their dues at a later date with the financial institution."
+                    description="A Brand Led credit facility that empowers dealers to increase their purchases while Brand/sellers receive upfront payments. Dealers benefit from extended payment terms, settling their dues at a later date with the financial institution."
                     flowGraphic={<DealerFinancingIllustration />}
                 />
                 <ProductDetails howItWorks={howItWorks} benefits={benefits} />

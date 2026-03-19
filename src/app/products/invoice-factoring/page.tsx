@@ -44,36 +44,36 @@ const howItWorks = {
 
 const benefits = {
     left: {
-        title: 'Key Benefits for Dealers',
+        title: 'Key Benefits for Brand',
         items: [
             {
-                headline: 'Same-Day Cash Flow',
-                description: 'Don\u2019t wait 60\u201390 days for payment. Get funds the day your invoice is verified.',
+                headline: 'Enhances Liquidity Planning',
+                description: 'Streamline cash flow forecasting with predictable payment schedules across your dealer network.',
             },
             {
-                headline: 'Not a Loan, No Debt',
-                description: 'This is sale of receivables. Nothing sits on your balance sheet. No EMI, no collateral.',
+                headline: 'Off Balance Sheet Credit',
+                description: 'Financing sits with the lender, not on your books. Keep your balance sheet clean while enabling channel growth.',
             },
             {
-                headline: 'Grow Without Waiting',
-                description: 'Use the cash to take on more orders instead of waiting for past ones to clear. Unlock your next purchase cycle.',
+                headline: 'Boost Sales and Dealer Loyalty',
+                description: 'Dealers with faster access to funds place larger orders and stay committed to your brand ecosystem.',
             },
         ],
     },
     right: {
-        title: 'Key Benefits for Brands',
+        title: 'Key Benefits for Buyer',
         items: [
             {
-                headline: 'Boost Channel Sales',
-                description: 'Dealers with liquidity place larger and more frequent orders. Your channel velocity increases.',
+                headline: 'Boost Business Volumes',
+                description: 'Unlock working capital from receivables to fund the next purchase cycle without waiting for payment.',
             },
             {
-                headline: 'No Early Payment Pressure',
-                description: 'Dealers stop chasing you for advances. The platform handles their liquidity needs.',
+                headline: 'Improved Working Capital Management',
+                description: 'Convert invoices to cash on demand. Reduce your cash conversion cycle and operate with greater agility.',
             },
             {
-                headline: 'Build Dealer Loyalty That Sticks',
-                description: 'Dealers get paid faster through your network. That\u2019s a competitive advantage other brands can\u2019t match.',
+                headline: 'Flexibility of Repayments',
+                description: 'Repayment aligned to your actual cash flows. No rigid EMI structures — pay when the Brand settles.',
             },
         ],
     },

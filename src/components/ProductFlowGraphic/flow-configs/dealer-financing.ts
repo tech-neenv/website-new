@@ -3,7 +3,7 @@ import type { FlowEntity, FlowConnection, FlowBadge, FlowStep, LegendItem } from
 export const dealerFinancingEntities: FlowEntity[] = [
     {
         label: 'Brand',
-        sublabel: 'OEM / Anchor',
+        sublabel: 'OEM / Brand',
         x: 20, y: 30, width: 150, height: 72,
         fill: '#f8f9fc', stroke: '#e2e5eb',
     },

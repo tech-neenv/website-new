@@ -4,179 +4,185 @@ import styles from './ProductIllustrations.module.css';
 
 const SupplierFinancingIllustration = () => (
     <div className={styles.wrapper}>
-        <svg className={styles.svg} viewBox="0 0 440 420" width="100%" xmlns="http://www.w3.org/2000/svg">
-            {/* Background dot grid (outer edges only) */}
-            <g opacity="0.06">
-                {Array.from({ length: 10 }).map((_, r) =>
-                    Array.from({ length: 11 }).map((_, c) => {
-                        const x = c * 40 + 20;
-                        const y = r * 40 + 20;
-                        if (x > 100 && x < 340 && y > 80 && y < 360) return null;
-                        return <circle key={`d${r}-${c}`} cx={x} cy={y} r="1.5" fill="#1a2d7a" />;
-                    })
-                )}
-            </g>
+        <svg className={styles.svg} viewBox="0 0 480 420" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="sf-s">
+                    <feDropShadow dx="0" dy="3" stdDeviation="6" floodColor="#1a2d7a" floodOpacity="0.1" />
+                </filter>
+                <filter id="sf-s2">
+                    <feDropShadow dx="0" dy="1" stdDeviation="3" floodColor="#1a2d7a" floodOpacity="0.06" />
+                </filter>
+                <filter id="sf-glow">
+                    <feGaussianBlur stdDeviation="6" result="b" />
+                    <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+                </filter>
+                <linearGradient id="sf-conveyor" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#e2e5eb" stopOpacity="0.3" />
+                    <stop offset="50%" stopColor="#e2e5eb" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#e2e5eb" stopOpacity="0.3" />
+                </linearGradient>
+            </defs>
 
-            {/* Vertical divider */}
-            <line x1="220" y1="60" x2="220" y2="380" stroke="#e2e5eb" strokeWidth="0.8" strokeDasharray="4 4" />
+            {/* ====== Conveyor / Supply Line (center horizontal) ====== */}
+            <rect x="90" y="168" width="300" height="8" rx="4" fill="url(#sf-conveyor)" />
+            <rect x="90" y="168" width="300" height="8" rx="4" fill="none" stroke="#d1d5db" strokeWidth="0.5" />
 
-            {/* Brand building (top-center) */}
-            <g style={{ animation: 'scaleIn 0.5s ease-out 0.1s both', transformOrigin: '220px 55px' }}>
-                <polygon points="220,28 192,45 248,45" fill="#1a2d7a" />
-                <rect x="192" y="45" width="56" height="40" rx="3" fill="#f8f9fc" stroke="#1a2d7a" strokeWidth="0.8" />
-                <rect x="200" y="52" width="7" height="7" rx="1" fill="#5d71c4" opacity="0.45" />
-                <rect x="213" y="52" width="7" height="7" rx="1" fill="#5d71c4" opacity="0.3" />
-                <rect x="226" y="52" width="7" height="7" rx="1" fill="#5d71c4" opacity="0.45" />
-                <rect x="211" y="68" width="14" height="17" rx="2" fill="#1a2d7a" opacity="0.15" />
-                {/* Lines going left-down and right-down */}
-                <path d="M 198 85 Q 150 120 100 140" fill="none" stroke="#e2e5eb" strokeWidth="0.8" strokeDasharray="4 3" opacity="0.4" />
-                <path d="M 242 85 Q 290 120 340 140" fill="none" stroke="#5d71c4" strokeWidth="0.8" strokeDasharray="4 3" opacity="0.4">
-                    <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.5s" repeatCount="indefinite" />
-                </path>
-            </g>
-
-            {/* Neenv shield (center) */}
-            <g style={{ animation: 'scaleIn 0.5s ease-out 0.2s both', transformOrigin: '220px 200px' }}>
-                <circle cx="220" cy="200" r="44" fill="#1a2d7a" opacity="0.04">
-                    <animate attributeName="opacity" values="0.04;0.1;0.04" dur="3s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="220" cy="200" r="40" fill="none" stroke="#5d71c4" strokeWidth="0.5" opacity="0.1">
-                    <animate attributeName="opacity" values="0.06;0.14;0.06" dur="2.5s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="220" cy="200" r="36" fill="#1a2d7a" />
-                <path d="M 220 178 L 237 186 L 237 202 Q 237 212 220 218 Q 203 212 203 202 L 203 186 Z" fill="none" stroke="#ffffff" strokeWidth="1.6" strokeLinejoin="round" />
-                <polyline points="212,197 218,205 230,191" fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </g>
-
-            {/* ===== LEFT HALF: "Before" (gray/muted) ===== */}
-
-            {/* Supplier factory (left, gray) */}
-            <g style={{ animation: 'scaleIn 0.5s ease-out 0.3s both', transformOrigin: '75px 145px' }}>
-                <rect x="40" y="125" width="70" height="50" rx="4" fill="#f8f9fc" stroke="#e2e5eb" strokeWidth="0.8" />
-                {/* Flat roof */}
-                <rect x="38" y="120" width="74" height="7" rx="2" fill="#e2e5eb" />
-                {/* Chimney (no smoke — idle) */}
-                <rect x="90" y="108" width="10" height="14" rx="1.5" fill="#e2e5eb" />
-                {/* Gray windows */}
-                <rect x="50" y="135" width="10" height="10" rx="1.5" fill="#e2e5eb" />
-                <rect x="65" y="135" width="10" height="10" rx="1.5" fill="#e2e5eb" />
-                <rect x="80" y="135" width="10" height="10" rx="1.5" fill="#e2e5eb" />
-                <rect x="60" y="155" width="14" height="20" rx="2" fill="#e2e5eb" />
-            </g>
-
-            {/* Empty cash indicators (left) */}
-            <g>
-                <circle cx="50" cy="205" r="6" fill="none" stroke="#e2e5eb" strokeWidth="1" />
-                <circle cx="68" cy="205" r="6" fill="none" stroke="#e2e5eb" strokeWidth="1" />
-                <circle cx="86" cy="205" r="6" fill="none" stroke="#e2e5eb" strokeWidth="1" />
-                {/* Empty bar */}
-                <rect x="42" y="220" width="52" height="5" rx="2.5" fill="none" stroke="#e2e5eb" strokeWidth="0.8" />
-                {/* X mark */}
-                <g opacity="0.3">
-                    <line x1="104" y1="200" x2="112" y2="208" stroke="#dc2626" strokeWidth="1.2" strokeLinecap="round" />
-                    <line x1="112" y1="200" x2="104" y2="208" stroke="#dc2626" strokeWidth="1.2" strokeLinecap="round" />
-                </g>
-            </g>
-
-            {/* Waiting calendar (left) */}
-            <g>
-                <rect x="45" y="248" width="55" height="44" rx="6" fill="#fef2f2" stroke="#e2e5eb" strokeWidth="0.7" />
-                {/* Calendar grid lines */}
-                <line x1="45" y1="260" x2="100" y2="260" stroke="#e2e5eb" strokeWidth="0.5" />
-                {[0, 1, 2].map((r) =>
-                    [0, 1, 2, 3].map((c) => (
-                        <rect key={`cal${r}${c}`} x={52 + c * 12} y={264 + r * 8} width="6" height="4" rx="1" fill="#e2e5eb" />
-                    ))
-                )}
-                {/* Red overdue dot */}
-                <circle cx="92" cy="284" r="4" fill="#dc2626" opacity="0.2" />
-            </g>
-
-            {/* Red X marks scattered */}
-            <g opacity="0.25">
-                <line x1="30" y1="300" x2="36" y2="306" stroke="#dc2626" strokeWidth="1" strokeLinecap="round" />
-                <line x1="36" y1="300" x2="30" y2="306" stroke="#dc2626" strokeWidth="1" strokeLinecap="round" />
-                <line x1="110" y1="260" x2="116" y2="266" stroke="#dc2626" strokeWidth="1" strokeLinecap="round" />
-                <line x1="116" y1="260" x2="110" y2="266" stroke="#dc2626" strokeWidth="1" strokeLinecap="round" />
-            </g>
-
-            {/* ===== RIGHT HALF: "After" (green/alive) ===== */}
-
-            {/* Supplier factory (right, green/alive) */}
-            <g style={{ animation: 'scaleIn 0.5s ease-out 0.4s both, floatGentle 3.5s ease-in-out infinite', transformOrigin: '365px 145px' }}>
-                <rect x="300" y="125" width="70" height="50" rx="4" fill="#f0fdf4" stroke="#0a714e" strokeWidth="0.8" />
-                <rect x="298" y="120" width="74" height="7" rx="2" fill="#0a714e" opacity="0.2" />
-                {/* Chimney with smoke puffs */}
-                <rect x="350" y="108" width="10" height="14" rx="1.5" fill="#0a714e" opacity="0.15" />
-                <circle cx="355" cy="104" r="3" fill="#0a714e" opacity="0.1">
-                    <animate attributeName="cy" values="104;92" dur="3s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.1;0" dur="3s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="358" cy="100" r="2.5" fill="#0a714e" opacity="0.08">
-                    <animate attributeName="cy" values="100;88" dur="3.5s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.08;0" dur="3.5s" repeatCount="indefinite" />
-                </circle>
-                {/* Green windows */}
-                <rect x="310" y="135" width="10" height="10" rx="1.5" fill="#0a714e" opacity="0.2" />
-                <rect x="325" y="135" width="10" height="10" rx="1.5" fill="#0a714e" opacity="0.2" />
-                <rect x="340" y="135" width="10" height="10" rx="1.5" fill="#0a714e" opacity="0.2" />
-                <rect x="322" y="155" width="14" height="20" rx="2" fill="#0a714e" opacity="0.12" />
-            </g>
-
-            {/* Filled cash indicators (right) */}
-            <g>
-                {[0, 1, 2].map((i) => (
-                    <circle key={`fc${i}`} cx={310 + i * 18} cy="205" r="6" fill="#0a714e"
-                        style={{ animation: `checkPop 0.3s ease-out ${0.7 + i * 0.15}s both` }} />
-                ))}
-                {/* Filled bar */}
-                <rect x="302" y="220" width="52" height="5" rx="2.5" fill="#e2e5eb" />
-                <rect x="302" y="220" width="52" height="5" rx="2.5" fill="#0a714e">
-                    <animate attributeName="width" from="0" to="52" dur="0.8s" begin="1.0s" fill="freeze" />
-                </rect>
-            </g>
-
-            {/* Coins arriving (right, above factory) */}
+            {/* Animated boxes on conveyor */}
             {[
-                { cx: 320, cy: 108, r: 7, color: '#0a714e', delay: 0.9 },
-                { cx: 340, cy: 102, r: 9, color: '#f59e0b', delay: 1.1 },
-                { cx: 360, cy: 110, r: 6, color: '#0a714e', delay: 1.3 },
-            ].map((coin, i) => (
-                <g key={`rc${i}`} style={{ animation: `coinDrop 0.6s ease-out ${coin.delay}s both`, transformOrigin: `${coin.cx}px ${coin.cy}px` }}>
-                    <circle cx={coin.cx} cy={coin.cy} r={coin.r} fill={coin.color} />
-                    <text x={coin.cx} y={coin.cy + coin.r * 0.35} textAnchor="middle" fill="#fff" fontSize={coin.r * 0.8} fontWeight="700" fontFamily="Poppins, sans-serif">&#x20B9;</text>
+                { x: 120, size: 24, color: '#f59e0b', delay: 0.3 },
+                { x: 180, size: 20, color: '#5d71c4', delay: 0.5 },
+                { x: 235, size: 26, color: '#f59e0b', delay: 0.7 },
+                { x: 295, size: 18, color: '#0a714e', delay: 0.9 },
+                { x: 340, size: 22, color: '#5d71c4', delay: 1.1 },
+            ].map((box, i) => (
+                <g key={`box${i}`} style={{ animation: `scaleIn 0.4s ease-out ${box.delay}s both`, transformOrigin: `${box.x + box.size / 2}px ${168 - box.size / 2}px` }}>
+                    <rect x={box.x} y={168 - box.size} width={box.size} height={box.size} rx="4" fill={box.color} opacity="0.12" stroke={box.color} strokeWidth="0.6" />
+                    {/* Box flap */}
+                    <path d={`M ${box.x} ${168 - box.size} L ${box.x + box.size / 2} ${168 - box.size - 4} L ${box.x + box.size} ${168 - box.size}`} fill={box.color} opacity="0.06" />
                 </g>
             ))}
 
-            {/* Green check card (right) */}
-            <g style={{ animation: 'slideInLeft 0.5s ease-out 0.7s both' }}>
-                <rect x="310" y="248" width="85" height="44" rx="8" fill="#ffffff" stroke="#e2e5eb" strokeWidth="0.8" />
-                {[0, 1].map((i) => (
-                    <g key={`gck${i}`}>
-                        <circle cx="326" cy={262 + i * 16} r="5" fill="#0a714e" style={{ animation: `checkPop 0.3s ease-out ${0.9 + i * 0.15}s both` }} />
-                        <polyline points={`323,${262 + i * 16} 325.5,${265 + i * 16} 330,${259 + i * 16}`} fill="none" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" />
-                        <rect x="337" y={259 + i * 16} width={35 - i * 8} height="4" rx="2" fill="#e2e5eb" />
-                    </g>
+            {/* ====== Vendor / Factory (left) ====== */}
+            <g style={{ animation: 'scaleIn 0.5s ease-out 0.1s both', transformOrigin: '70px 110px' }}>
+                {/* Factory building */}
+                <rect x="20" y="80" width="100" height="86" rx="6" fill="#ffffff" filter="url(#sf-s)" />
+                <rect x="20" y="80" width="100" height="86" rx="6" fill="#ffffff" stroke="#e2e5eb" strokeWidth="0.8" />
+                {/* Roof / header */}
+                <rect x="20" y="80" width="100" height="14" rx="6" fill="#1a2d7a" opacity="0.06" />
+                <rect x="20" y="90" width="100" height="4" fill="#1a2d7a" opacity="0.06" />
+                {/* Chimney */}
+                <rect x="92" y="60" width="14" height="22" rx="2" fill="#f8f9fc" stroke="#e2e5eb" strokeWidth="0.6" />
+                {/* Smoke puffs */}
+                <circle cx="99" cy="55" r="4" fill="#1a2d7a" opacity="0.04">
+                    <animate attributeName="cy" values="55;42" dur="3s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0.05;0" dur="3s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="102" cy="50" r="3" fill="#1a2d7a" opacity="0.03">
+                    <animate attributeName="cy" values="50;38" dur="3.5s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0.04;0" dur="3.5s" repeatCount="indefinite" />
+                </circle>
+                {/* Windows */}
+                {[0, 1, 2].map((i) => (
+                    <rect key={`fw${i}`} x={32 + i * 28} y="100" width="16" height="14" rx="2" fill="#5d71c4" opacity="0.12" stroke="#5d71c4" strokeWidth="0.3" />
                 ))}
+                {/* Door */}
+                <rect x="55" y="128" width="20" height="38" rx="3" fill="#1a2d7a" opacity="0.06" />
+                <circle cx="72" cy="147" r="1.5" fill="#1a2d7a" opacity="0.15" />
+                {/* Label */}
+                <rect x="28" y="178" width="84" height="24" rx="12" fill="#ffffff" stroke="#1a2d7a" strokeWidth="0.8" filter="url(#sf-s2)" />
+                <text x="70" y="194" textAnchor="middle" fill="#1a2d7a" fontSize="10" fontWeight="600" fontFamily="Poppins, sans-serif">Vendor</text>
             </g>
 
-            {/* Growth chart card (right, below) */}
-            <g style={{ animation: 'scaleIn 0.5s ease-out 0.9s both' }} opacity="0.8">
-                <rect x="355" y="308" width="60" height="40" rx="8" fill="#ffffff" stroke="#e2e5eb" strokeWidth="0.8" />
-                <rect x="365" y="332" width="6" height="10" rx="1.5" fill="#0a714e" opacity="0.3" />
-                <rect x="375" y="326" width="6" height="16" rx="1.5" fill="#0a714e" opacity="0.5" />
-                <rect x="385" y="320" width="6" height="22" rx="1.5" fill="#0a714e" opacity="0.7" />
-                <rect x="395" y="314" width="6" height="28" rx="1.5" fill="#0a714e" />
+            {/* ====== Brand Building (right) ====== */}
+            <g style={{ animation: 'scaleIn 0.5s ease-out 0.2s both', transformOrigin: '410px 110px' }}>
+                <rect x="360" y="80" width="100" height="86" rx="6" fill="#ffffff" filter="url(#sf-s)" />
+                <rect x="360" y="80" width="100" height="86" rx="6" fill="#ffffff" stroke="#e2e5eb" strokeWidth="0.8" />
+                {/* Roof triangle */}
+                <polygon points="410,58 358,82 462,82" fill="#1a2d7a" />
+                <line x1="360" y1="80" x2="460" y2="80" stroke="#1a2d7a" strokeWidth="0.5" />
+                {/* Pediment detail */}
+                <rect x="360" y="80" width="100" height="5" rx="1" fill="#1a2d7a" opacity="0.12" />
+                {/* Windows */}
+                {[0, 1, 2].map((r) =>
+                    [0, 1].map((c) => (
+                        <rect key={`bw${r}${c}`} x={376 + c * 36} y={92 + r * 18} width="14" height="12" rx="2" fill="#5d71c4" opacity="0.12" stroke="#5d71c4" strokeWidth="0.3" />
+                    ))
+                )}
+                {/* Door */}
+                <rect x="401" y="130" width="18" height="36" rx="3" fill="#1a2d7a" opacity="0.08" />
+                <circle cx="415" cy="148" r="1.5" fill="#1a2d7a" opacity="0.15" />
+                {/* Label */}
+                <rect x="368" y="178" width="84" height="24" rx="12" fill="#ffffff" stroke="#1a2d7a" strokeWidth="0.8" filter="url(#sf-s2)" />
+                <text x="410" y="194" textAnchor="middle" fill="#1a2d7a" fontSize="10" fontWeight="600" fontFamily="Poppins, sans-serif">Brand</text>
             </g>
 
-            {/* Decorative — only right half */}
-            <circle cx="280" cy="300" r="3" fill="#0a714e" opacity="0.18">
-                <animate attributeName="opacity" values="0.12;0.25;0.12" dur="3s" repeatCount="indefinite" />
-            </circle>
-            <circle cx="400" cy="180" r="2.5" fill="#f59e0b" opacity="0.2" />
-            <circle cx="260" cy="350" r="2" fill="#5d71c4" opacity="0.15" />
-            <rect x="380" y="140" width="5" height="5" rx="1" fill="#0a714e" opacity="0.12" transform="rotate(45 382.5 142.5)" />
-            <rect x="270" y="110" width="4" height="4" rx="1" fill="#5d71c4" opacity="0.1" transform="rotate(45 272 112)" />
+            {/* ====== Goods flow arrow (factory → brand) ====== */}
+            <g style={{ animation: 'scaleIn 0.3s ease-out 0.6s both', transformOrigin: '240px 160px' }}>
+                <rect x="178" y="152" width="124" height="14" rx="7" fill="#f0f2ff" stroke="#5d71c4" strokeWidth="0.5" />
+                <text x="220" y="162" fill="#5d71c4" fontSize="8" fontWeight="600" fontFamily="Poppins, sans-serif">Goods Delivered</text>
+                <polygon points="302,159 310,155 310,163" fill="#5d71c4" opacity="0.4" />
+            </g>
+
+            {/* ====== Neenv Shield (center-bottom) ====== */}
+            <g style={{ animation: 'scaleIn 0.5s ease-out 0.4s both', transformOrigin: '240px 262px' }}>
+                <circle cx="240" cy="262" r="44" fill="#1a2d7a" opacity="0.04">
+                    <animate attributeName="r" values="44;50;44" dur="3s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0.03;0.08;0.03" dur="3s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="240" cy="262" r="36" fill="#1a2d7a" filter="url(#sf-glow)" />
+                <path d="M 240 242 L 258 251 L 258 267 Q 258 278 240 286 Q 222 278 222 267 L 222 251 Z" fill="none" stroke="#ffffff" strokeWidth="1.8" strokeLinejoin="round" />
+                <polyline points="232,262 238,270 250,256" fill="none" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            </g>
+
+            {/* ====== Money flow: Neenv → Vendor (early payment) ====== */}
+            <path d="M 204 262 C 160 272, 110 280, 75 310" fill="none" stroke="#0a714e" strokeWidth="2" strokeDasharray="7 4" opacity="0.45">
+                <animate attributeName="stroke-dashoffset" from="0" to="-22" dur="1.2s" repeatCount="indefinite" />
+            </path>
+            {/* Arrow head */}
+            <polygon points="75,306 68,314 78,314" fill="#0a714e" opacity="0.4" />
+
+            {/* ====== Money flow: Brand → Neenv (settlement, subtle) ====== */}
+            <path d="M 410 202 C 380 230, 310 252, 276 258" fill="none" stroke="#5d71c4" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.3">
+                <animate attributeName="stroke-dashoffset" from="0" to="18" dur="2s" repeatCount="indefinite" />
+            </path>
+
+            {/* ====== Vendor Payment Card (bottom-left) ====== */}
+            <g style={{ animation: 'scaleIn 0.5s ease-out 0.6s both', transformOrigin: '75px 355px' }}>
+                <rect x="15" y="315" width="120" height="85" rx="12" fill="#ffffff" stroke="#0a714e" strokeWidth="1" filter="url(#sf-s)" />
+                {/* Header */}
+                <rect x="15" y="315" width="120" height="28" rx="12" fill="#0a714e" />
+                <rect x="15" y="337" width="120" height="6" fill="#0a714e" />
+                <text x="75" y="335" textAnchor="middle" fill="#fff" fontSize="9" fontWeight="600" fontFamily="Poppins, sans-serif">EARLY PAYMENT</text>
+                {/* Amount */}
+                <text x="32" y="365" fill="#0a714e" fontSize="18" fontWeight="700" fontFamily="Poppins, sans-serif">&#x20B9;8.2L</text>
+                {/* Speed badge */}
+                <rect x="32" y="375" width="82" height="16" rx="8" fill="#ecfdf5" />
+                <path d="M 44 379 L 41 385 L 44 385 L 41 391" fill="none" stroke="#f59e0b" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                <text x="52" y="387" fill="#0a714e" fontSize="8" fontWeight="600" fontFamily="Poppins, sans-serif">Instant Credit</text>
+                {/* Coins */}
+                <g style={{ animation: 'coinDrop 0.6s ease-out 1.0s both', transformOrigin: '110px 370px' }}>
+                    <circle cx="110" cy="365" r="8" fill="#0a714e" />
+                    <text x="110" y="369" textAnchor="middle" fill="#fff" fontSize="8" fontWeight="700" fontFamily="Poppins, sans-serif">&#x20B9;</text>
+                </g>
+                <g style={{ animation: 'coinDrop 0.5s ease-out 1.2s both', transformOrigin: '122px 375px' }}>
+                    <circle cx="122" cy="375" r="5" fill="#f59e0b" />
+                </g>
+            </g>
+
+            {/* ====== Brand Settlement Card (bottom-right) ====== */}
+            <g style={{ animation: 'scaleIn 0.5s ease-out 0.8s both', transformOrigin: '400px 358px' }}>
+                <rect x="345" y="315" width="120" height="85" rx="12" fill="#ffffff" stroke="#e2e5eb" strokeWidth="0.8" filter="url(#sf-s)" />
+                {/* Header */}
+                <rect x="345" y="315" width="120" height="28" rx="12" fill="#1a2d7a" opacity="0.04" />
+                <rect x="345" y="337" width="120" height="6" fill="#1a2d7a" opacity="0.04" />
+                <text x="405" y="335" textAnchor="middle" fill="#1a2d7a" fontSize="9" fontWeight="600" fontFamily="Poppins, sans-serif" opacity="0.6">BRAND SETTLES</text>
+                {/* Clock icon */}
+                <circle cx="375" cy="368" r="14" fill="#f8f9fc" stroke="#e2e5eb" strokeWidth="0.8" />
+                <line x1="375" y1="368" x2="375" y2="359" stroke="#1a2d7a" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="375" y1="368" x2="382" y2="368" stroke="#5d71c4" strokeWidth="1" strokeLinecap="round" />
+                <circle cx="375" cy="368" r="1.5" fill="#1a2d7a" />
+                {/* Date */}
+                <text x="396" y="364" fill="#1a2d7a" fontSize="9" fontWeight="600" fontFamily="Poppins, sans-serif">Due Date</text>
+                <text x="396" y="377" fill="#6b7280" fontSize="8" fontFamily="Poppins, sans-serif">On original terms</text>
+                {/* Calendar mini */}
+                <rect x="396" y="384" width="44" height="10" rx="5" fill="#f0f2ff" />
+                <text x="418" y="392" textAnchor="middle" fill="#5d71c4" fontSize="7" fontWeight="500" fontFamily="Poppins, sans-serif">90 days</text>
+            </g>
+
+            {/* ====== Flow label badges ====== */}
+            <g style={{ animation: 'scaleIn 0.3s ease-out 0.7s both', transformOrigin: '140px 278px' }}>
+                <rect x="108" y="270" width="64" height="16" rx="8" fill="#ecfdf5" stroke="#0a714e" strokeWidth="0.5" />
+                <text x="140" y="281" textAnchor="middle" fill="#0a714e" fontSize="7.5" fontWeight="600" fontFamily="Poppins, sans-serif">Pays Vendor</text>
+            </g>
+            <g style={{ animation: 'scaleIn 0.3s ease-out 0.8s both', transformOrigin: '348px 232px' }}>
+                <rect x="310" y="224" width="76" height="16" rx="8" fill="#f0f2ff" stroke="#5d71c4" strokeWidth="0.5" />
+                <text x="348" y="235" textAnchor="middle" fill="#5d71c4" fontSize="7.5" fontWeight="600" fontFamily="Poppins, sans-serif">Settles Later</text>
+            </g>
+
+            {/* Decorative */}
+            <circle cx="240" cy="35" r="3" fill="#f59e0b" opacity="0.15" />
+            <circle cx="12" cy="260" r="2.5" fill="#5d71c4" opacity="0.12" />
+            <rect x="465" y="260" width="5" height="5" rx="1" fill="#0a714e" opacity="0.1" transform="rotate(45 467.5 262.5)" />
         </svg>
     </div>
 );

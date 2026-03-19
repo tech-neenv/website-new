@@ -9,7 +9,7 @@ import styles from './Header.module.css';
 const products = [
     {
         title: 'Dealer Financing',
-        description: 'Pre-approved credit lines for dealer networks',
+        description: 'Brand Led credit lines for dealer networks',
         href: '/products/dealer-financing',
         icon: <Layers size={22} strokeWidth={1.5} />,
     },

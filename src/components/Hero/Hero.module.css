@@ -58,8 +58,8 @@
 
 .heroInner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-12);
+    grid-template-columns: 1fr 1.25fr;
+    gap: var(--space-8);
     align-items: center;
     position: relative;
     z-index: 1;
@@ -145,6 +145,28 @@
     margin-bottom: var(--space-5);
 }
 
+.typewriterLine {
+    display: block;
+    min-height: 1.2em;
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 0.85em;
+    background: #1a2d7a;
+    margin-left: 2px;
+    vertical-align: baseline;
+    position: relative;
+    top: 0.08em;
+    animation: cursorBlink 530ms steps(1) infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+}
+
 .highlight {
     color: var(--color-primary);
     background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
@@ -207,6 +229,8 @@
 /* ===== VISUAL GRID ===== */
 .visual {
     animation: slide-up 0.8s var(--ease-out) 0.15s both;
+    /* Extend visual so only 40px remains between it and the viewport right edge */
+    margin-right: min(0px, calc(40px - var(--container-padding) - (100vw - var(--container-max)) / 2));
 }
 
 .visualGrid {
@@ -397,8 +421,9 @@
     }
 
     .visual {
-        max-width: 440px;
+        max-width: 540px;
         margin: 0 auto;
+        margin-right: auto;
     }
 }
 

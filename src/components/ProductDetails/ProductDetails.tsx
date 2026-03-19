@@ -26,7 +26,7 @@ interface ProductDetailsProps {
     };
     benefits: {
         left: BenefitCard;
-        right: BenefitCard;
+        right?: BenefitCard;
     };
 }
 
@@ -72,7 +72,7 @@ const ProductDetails = ({ howItWorks, benefits }: ProductDetailsProps) => {
             {/* Section B — Dual Benefits Cards */}
             <section className={styles.benefitsSection}>
                 <div className="container">
-                    <div className={styles.benefitsGrid}>
+                    <div className={`${styles.benefitsGrid} ${!benefits.right ? styles.benefitsGridSingle : ''}`}>
                         {/* Left Card */}
                         <div className={`${styles.benefitCard} ${styles.benefitCardLeft}`}>
                             <h3 className={styles.benefitCardTitle}>{benefits.left.title}</h3>
@@ -92,22 +92,24 @@ const ProductDetails = ({ howItWorks, benefits }: ProductDetailsProps) => {
                         </div>
 
                         {/* Right Card */}
-                        <div className={`${styles.benefitCard} ${styles.benefitCardRight}`}>
-                            <h3 className={styles.benefitCardTitle}>{benefits.right.title}</h3>
-                            <div className={styles.benefitItems}>
-                                {benefits.right.items.map((item, index) => (
-                                    <div key={index} className={styles.benefitItem}>
-                                        <div className={styles.benefitCheckIcon}>
-                                            <CheckIcon />
+                        {benefits.right && (
+                            <div className={`${styles.benefitCard} ${styles.benefitCardRight}`}>
+                                <h3 className={styles.benefitCardTitle}>{benefits.right.title}</h3>
+                                <div className={styles.benefitItems}>
+                                    {benefits.right.items.map((item, index) => (
+                                        <div key={index} className={styles.benefitItem}>
+                                            <div className={styles.benefitCheckIcon}>
+                                                <CheckIcon />
+                                            </div>
+                                            <div className={styles.benefitItemContent}>
+                                                <h4 className={styles.benefitHeadline}>{item.headline}</h4>
+                                                <p className={styles.benefitDescription}>{item.description}</p>
+                                            </div>
                                         </div>
-                                        <div className={styles.benefitItemContent}>
-                                            <h4 className={styles.benefitHeadline}>{item.headline}</h4>
-                                            <p className={styles.benefitDescription}>{item.description}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
                 </div>
             </section>

@@ -21,7 +21,7 @@ const howItWorks = {
     steps: [
         {
             title: 'Eligibility Check',
-            description: 'Dealer\u2019s anchor trade data and business profile assessed digitally.',
+            description: 'Dealer\u2019s Brand trade data and business profile assessed digitally.',
             icon: <ClipboardCheck size={16} strokeWidth={2} />,
         },
         {
@@ -44,36 +44,19 @@ const howItWorks = {
 
 const benefits = {
     left: {
-        title: 'Key Benefits for Dealers',
+        title: 'Key Benefits',
         items: [
             {
-                headline: 'No Collateral Required',
-                description: 'Backed by your trade relationship with the brand, not property or collateral.',
+                headline: 'Predictable Repayment Structure',
+                description: 'Fixed monthly EMIs with clear tenor. No floating rates, no surprises. Plan your cash flow with confidence.',
             },
             {
-                headline: 'Instant Liquidity When You Need It',
-                description: 'Digital KYC, instant verification, and fast credit decisioning. Funds in your account within 72 hours. No branch visits.',
+                headline: 'Support Tactical and Seasonal Requirements',
+                description: 'Bridge funding gaps during peak seasons, bulk purchases, or market opportunities that demand immediate capital deployment.',
             },
             {
-                headline: 'Predictable Repayment',
-                description: 'Fixed monthly EMIs. No floating rates, no surprises. Plan your cash flow with confidence.',
-            },
-        ],
-    },
-    right: {
-        title: 'Key Benefits for Brands',
-        items: [
-            {
-                headline: 'Boost Channel Sales',
-                description: 'Financially stable dealers maintain consistent purchase volumes and take larger orders.',
-            },
-            {
-                headline: 'Reduce Dealer Churn',
-                description: 'Working capital stress is the #1 reason dealers leave a network. Remove it.',
-            },
-            {
-                headline: 'Build Dealer Loyalty That Sticks',
-                description: 'Brands that solve funding become irreplaceable. Your dealers won\u2019t look elsewhere.',
+                headline: 'Better Matching of Loan Tenor with Working Capital Needs',
+                description: 'Loan duration aligned to your actual business cycle. Short-term capital for short-term needs — no long-term debt overhang.',
             },
         ],
     },
