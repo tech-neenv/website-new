@@ -103,15 +103,25 @@ const SupplierFinancingIllustration = () => (
                 <polygon points="302,159 310,155 310,163" fill="#5d71c4" opacity="0.4" />
             </g>
 
-            {/* ====== Neenv Shield (center-bottom) ====== */}
+            {/* ====== Lender (center-bottom) ====== */}
             <g style={{ animation: 'scaleIn 0.5s ease-out 0.4s both', transformOrigin: '240px 262px' }}>
                 <circle cx="240" cy="262" r="44" fill="#1a2d7a" opacity="0.04">
                     <animate attributeName="r" values="44;50;44" dur="3s" repeatCount="indefinite" />
                     <animate attributeName="opacity" values="0.03;0.08;0.03" dur="3s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="240" cy="262" r="36" fill="#1a2d7a" filter="url(#sf-glow)" />
-                <path d="M 240 242 L 258 251 L 258 267 Q 258 278 240 286 Q 222 278 222 267 L 222 251 Z" fill="none" stroke="#ffffff" strokeWidth="1.8" strokeLinejoin="round" />
-                <polyline points="232,262 238,270 250,256" fill="none" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                {/* Bank icon */}
+                <polygon points="240,242 220,252 260,252" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeLinejoin="round" />
+                <line x1="220" y1="252" x2="260" y2="252" stroke="#ffffff" strokeWidth="1.5" />
+                {/* Columns */}
+                <line x1="227" y1="255" x2="227" y2="270" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
+                <line x1="236" y1="255" x2="236" y2="270" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
+                <line x1="244" y1="255" x2="244" y2="270" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
+                <line x1="253" y1="255" x2="253" y2="270" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
+                {/* Base */}
+                <rect x="220" y="270" width="40" height="3" rx="1" fill="#ffffff" opacity="0.9" />
+                {/* Label */}
+                <text x="240" y="283" textAnchor="middle" fill="#ffffff" fontSize="7.5" fontWeight="600" fontFamily="Poppins, sans-serif" letterSpacing="0.05em">LENDER</text>
             </g>
 
             {/* ====== Money flow: Neenv → Vendor (early payment) ====== */}
