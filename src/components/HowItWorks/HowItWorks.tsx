@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { BarChart3, ScanLine, BrainCircuit, FileSignature, Banknote } from 'lucide-react';
+import { BarChart3, ScanLine, Sparkles, FileSignature, Banknote } from 'lucide-react';
 import styles from './HowItWorks.module.css';
 
 const steps = [
@@ -21,7 +21,7 @@ const steps = [
     },
     {
         number: 3,
-        icon: <BrainCircuit size={20} strokeWidth={2} />,
+        icon: <Sparkles size={20} strokeWidth={2} />,
         title: 'AI Credit Decisioning',
         time: 'Rule Based ML',
         description: 'Brand data, bureau scores, and cash flow patterns — all in one model.',
