@@ -1,6 +1,6 @@
 import type { FlowEntity, FlowConnection, FlowBadge, FlowStep, LegendItem } from '../ProductFlowGraphic';
 
-export const dealerFinancingEntities: FlowEntity[] = [
+export const channelFinancingEntities: FlowEntity[] = [
     {
         label: 'Brand',
         sublabel: 'OEM / Brand',
@@ -28,7 +28,7 @@ export const dealerFinancingEntities: FlowEntity[] = [
     },
 ];
 
-export const dealerFinancingConnections: FlowConnection[] = [
+export const channelFinancingConnections: FlowConnection[] = [
     // 1. Brand → Neenv (trade data)
     {
         from: [170, 60],
@@ -92,7 +92,7 @@ export const dealerFinancingConnections: FlowConnection[] = [
     },
 ];
 
-export const dealerFinancingBadges: FlowBadge[] = [
+export const channelFinancingBadges: FlowBadge[] = [
     {
         text: '\u20B9 Disbursed',
         x: 320, y: 185,
@@ -105,14 +105,14 @@ export const dealerFinancingBadges: FlowBadge[] = [
     },
 ];
 
-export const dealerFinancingSteps: FlowStep[] = [
+export const channelFinancingSteps: FlowStep[] = [
     { number: 1, x: 185, y: 48, bgColor: '#5d71c4' },
     { number: 2, x: 365, y: 48, bgColor: '#5d71c4' },
     { number: 3, x: 258, y: 180, bgColor: '#0a714e' },
     { number: 4, x: 148, y: 260, bgColor: '#f59e0b' },
 ];
 
-export const dealerFinancingLegend: LegendItem[] = [
+export const channelFinancingLegend: LegendItem[] = [
     { color: '#5d71c4', label: 'Data flow' },
     { color: '#0a714e', label: 'Fund flow' },
     { color: '#f59e0b', label: 'Goods flow' },

@@ -4,7 +4,7 @@ import { Check, ArrowRight } from 'lucide-react';
 import styles from './Solutions.module.css';
 
 /* Multicolor SVG Icons — matches Hero section */
-const DealerIcon = () => (
+const ChannelIcon = () => (
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
         <rect x="2" y="6" width="20" height="4" rx="1.5" fill="#ffffff"/>
         <rect x="4" y="12" width="16" height="4" rx="1.5" fill="#ffffff" opacity="0.8"/>
@@ -47,8 +47,8 @@ const SupplierIcon = () => (
 
 const products = [
     {
-        icon: <DealerIcon />,
-        title: 'Dealer Financing',
+        icon: <ChannelIcon />,
+        title: 'Channel Financing',
         tagline: 'Brand led and data powered Credit Facilities for your dealer network.',
         highlight: 'Data Driven',
         highlightLabel: 'customised solutions',
@@ -58,17 +58,17 @@ const products = [
             'Dealer Repays on Terms',
         ],
         color: 'primary',
-        link: '/products/dealer-financing',
+        link: '/products/channel-financing',
     },
     {
         icon: <CapitalIcon />,
         title: 'Working Capital Loan',
         tagline: 'Short-term capital for channel partners. No collateral. No delays.',
         highlight: 'Financial Flexibility',
-        highlightLabel: 'up to ₹ 2 Cr',
+        highlightLabel: 'up to 12 months',
         benefits: [
             'Eligibility Check & Sanction',
-            'Capital Deployed for Operations',
+            'Capital Deployed for Business',
             'Structured EMI Repayment',
         ],
         color: 'secondary',
@@ -82,8 +82,8 @@ const products = [
         highlightLabel: 'improved cashflow',
         benefits: [
             'Invoice Raised & Verified',
-            'Funds Disbursed Same Day',
-            'Brand Settles on Due Date',
+            'Funds Disbursed same day',
+            'Buyer pays on or before Due Date',
         ],
         color: 'gold',
         link: '/products/invoice-factoring',
@@ -91,7 +91,7 @@ const products = [
     {
         icon: <SupplierIcon />,
         title: 'Supplier Financing',
-        tagline: 'Early payments to vendors. Zero impact on your balance sheet.',
+        tagline: 'Early payments to vendors. Build vendor loyalty.',
         highlight: 'Competitive Rates',
         highlightLabel: 'price discovery',
         benefits: [
@@ -109,7 +109,7 @@ const Solutions = () => {
         <section id="solutions" className={styles.solutions}>
             <div className={styles.solutionsContainer}>
                 <div className={styles.header}>
-                    <span className={`${styles.badge} badge-animated`}>CHANNEL FINANCE SUITE</span>
+                    <span className={`${styles.badge} badge-animated`}>SUPPLY CHAIN PRODUCT SUITE</span>
                     <h2 className={styles.title}>Four Products. One Platform. Zero Collateral.</h2>
                     <p className={styles.subtitle}>
                         Each product is designed for a specific node in the supply chain. Together, they unlock liquidity across the entire Brand ecosystem.

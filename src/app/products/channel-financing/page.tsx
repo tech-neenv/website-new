@@ -3,14 +3,14 @@ import { CreditCard, ShoppingCart, Banknote, CalendarCheck } from 'lucide-react'
 import Header from '@/components/Header/Header';
 import ProductHero from '@/components/ProductHero/ProductHero';
 import ProductDetails from '@/components/ProductDetails/ProductDetails';
-import DealerFinancingIllustration from '@/components/ProductIllustrations/DealerFinancingIllustration';
+import ChannelFinancingIllustration from '@/components/ProductIllustrations/ChannelFinancingIllustration';
 import Footer from '@/components/Footer/Footer';
 
 export const metadata: Metadata = {
-    title: 'Dealer Financing - Neenv',
-    description: 'Enable dealers to grow purchases with Brand Led credit lines. Brands receive upfront payments while dealers settle on flexible terms.',
+    title: 'Channel Financing - Neenv',
+    description: 'Enable dealers to grow purchases with Brand Led Credit Facilities. Brands receive upfront payments while dealers settle on flexible terms.',
     openGraph: {
-        title: 'Dealer Financing - Neenv',
+        title: 'Channel Financing - Neenv',
         description: 'Brand Led credit facilities for dealers. Brands get paid upfront, dealers repay on flexible terms. Boost sales and strengthen channel relationships.',
         type: 'website',
     },
@@ -20,13 +20,13 @@ const howItWorks = {
     sectionTitle: 'From Setup to Settlement',
     steps: [
         {
-            title: 'Credit Line Setup',
+            title: 'Credit Facility Setup',
             description: 'Brand Led facility established using dealer\u2019s trade history with the brand.',
             icon: <CreditCard size={16} strokeWidth={2} />,
         },
         {
             title: 'Purchase Goods',
-            description: 'Dealer uses credit line to purchase inventory without immediate payment.',
+            description: 'Dealer uses Credit Facility to purchase inventory without immediate payment.',
             icon: <ShoppingCart size={16} strokeWidth={2} />,
         },
         {
@@ -48,7 +48,7 @@ const benefits = {
         items: [
             {
                 headline: 'No Collateral Required',
-                description: 'Your Brand relationship is your credential. No property papers, no fixed deposits.',
+                description: 'Your Brand relationship is your credential. No property papers.',
             },
             {
                 headline: 'Instant Liquidity When You Need It',
@@ -56,7 +56,7 @@ const benefits = {
             },
             {
                 headline: 'Flexible Repayment',
-                description: 'EMI or end-of-term, matched to your cash conversion cycle. Pay as your business earns.',
+                description: 'EMI or end-of-term, matched to your cash conversion cycle. Pay as your business collects.',
             },
         ],
     },
@@ -79,16 +79,16 @@ const benefits = {
     },
 };
 
-export default function DealerFinancingPage() {
+export default function ChannelFinancingPage() {
     return (
         <>
             <Header />
             <main>
                 <ProductHero
-                    title="Dealer Financing"
+                    title="Channel Financing"
                     subtitle="Credit Facility for Channel Partners"
                     description="A Brand Led credit facility that empowers dealers to increase their purchases while Brand/sellers receive upfront payments. Dealers benefit from extended payment terms, settling their dues at a later date with the financial institution."
-                    flowGraphic={<DealerFinancingIllustration />}
+                    flowGraphic={<ChannelFinancingIllustration />}
                 />
                 <ProductDetails howItWorks={howItWorks} benefits={benefits} />
             </main>

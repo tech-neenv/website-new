@@ -225,7 +225,7 @@ const FiIllustration = () => (
                 <text x="16" y="218" fill="#6b7280" fontSize="7.5" fontFamily="Plus Jakarta Sans, sans-serif">Products</text>
                 <g transform="translate(16, 226)">
                     <rect width="72" height="9" rx="4.5" fill="#1a2d7a" opacity="0.06" />
-                    <text x="5" y="7" fill="#1a2d7a" fontSize="6.5" fontWeight="600" fontFamily="Plus Jakarta Sans, sans-serif">Dealer Finance</text>
+                    <text x="5" y="7" fill="#1a2d7a" fontSize="6.5" fontWeight="600" fontFamily="Plus Jakarta Sans, sans-serif">Channel Finance</text>
                 </g>
                 <g transform="translate(16, 238)">
                     <rect width="72" height="9" rx="4.5" fill="#0a714e" opacity="0.06" />
@@ -271,6 +271,9 @@ const FiIllustration = () => (
             <rect x="325" y="418" width="4" height="4" rx="1" fill="#5d71c4" opacity="0.08" transform="rotate(45 327 420)" />
             <circle cx="45" cy="175" r="1.5" fill="#1a2d7a" opacity="0.06" />
             <circle cx="435" cy="170" r="1.5" fill="#0a714e" opacity="0.06" />
+
+            {/* *illustrative purpose only */}
+            <text x="240" y="436" textAnchor="middle" fill="#6b7280" fontSize="7" fontFamily="inherit" opacity="0.5">*illustrative purpose only</text>
         </svg>
     </div>
 );

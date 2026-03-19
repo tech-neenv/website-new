@@ -2,7 +2,7 @@
 
 import styles from './ProductIllustrations.module.css';
 
-const DealerFinancingIllustration = () => (
+const ChannelFinancingIllustration = () => (
     <div className={styles.wrapper}>
         <svg className={styles.svg} viewBox="0 0 480 440" width="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -163,10 +163,10 @@ const DealerFinancingIllustration = () => (
                 <circle cx="242" cy="314" r="5.5" fill="#0a714e" opacity="0.6" />
             </g>
 
-            {/* ====== Credit Line badge (below center circle) ====== */}
+            {/* ====== Credit Facility badge (below center circle) ====== */}
             <g style={{ animation: 'scaleIn 0.3s ease-out 0.7s both', transformOrigin: '270px 296px' }}>
                 <rect x="254" y="288" width="72" height="18" rx="9" fill="#ecfdf5" stroke="#0a714e" strokeWidth="0.5" />
-                <text x="290" y="300" textAnchor="middle" fill="#0a714e" fontSize="8" fontWeight="600" fontFamily="Poppins, sans-serif">Credit Line</text>
+                <text x="290" y="300" textAnchor="middle" fill="#0a714e" fontSize="8" fontWeight="600" fontFamily="Poppins, sans-serif">Credit Facility</text>
             </g>
 
             {/* ====== Floating: Limit Utilization Card (left) ====== */}
@@ -204,8 +204,11 @@ const DealerFinancingIllustration = () => (
             <circle cx="310" cy="25" r="2" fill="#5d71c4" opacity="0.1" />
             <rect x="155" y="418" width="4" height="4" rx="1" fill="#0a714e" opacity="0.08" transform="rotate(45 157 420)" />
             <rect x="325" y="415" width="4" height="4" rx="1" fill="#5d71c4" opacity="0.08" transform="rotate(45 327 417)" />
+
+            {/* *illustrative purpose only */}
+            <text x="240" y="436" textAnchor="middle" fill="#6b7280" fontSize="7" fontFamily="inherit" opacity="0.5">*illustrative purpose only</text>
         </svg>
     </div>
 );
 
-export default DealerFinancingIllustration;
+export default ChannelFinancingIllustration;

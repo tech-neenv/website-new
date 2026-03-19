@@ -6,7 +6,7 @@ import FinanceElements from '@/components/FinanceElements/FinanceElements';
 export const metadata: Metadata = {
     title: 'Neenv Channel Finance for India\'s Supply Chains',
     description: 'AI-native supply chain finance platform. Collateral-free financing for dealers, suppliers, and distributors in Brand-led ecosystems. 72-hour disbursal.',
-    keywords: 'channel finance, supply chain finance, dealer financing, supplier financing, Factoring, working capital, AI fintech, collateral-free lending',
+    keywords: 'channel finance, supply chain finance, channel financing, supplier financing, Factoring, working capital, AI fintech, collateral-free lending',
     icons: {
         icon: '/images/favicon.ico',
     },

@@ -133,6 +133,9 @@ const WorkingCapitalIllustration = () => (
             {/* Decorative */}
             <circle cx="465" cy="200" r="3" fill="#5d71c4" opacity="0.12" />
             <circle cx="12" cy="200" r="2.5" fill="#f59e0b" opacity="0.15" />
+
+            {/* *illustrative purpose only */}
+            <text x="240" y="416" textAnchor="middle" fill="#6b7280" fontSize="7" fontFamily="inherit" opacity="0.5">*illustrative purpose only</text>
         </svg>
     </div>
 );

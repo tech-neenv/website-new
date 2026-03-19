@@ -10,7 +10,7 @@ const Tick = ({ delay }: { delay: number }) => (
     </div>
 );
 
-const DealerFinancingMockup = () => (
+const ChannelFinancingMockup = () => (
     <div className={styles.mockupCard}>
         {/* Header */}
         <div className={styles.headerRow}>
@@ -69,4 +69,4 @@ const DealerFinancingMockup = () => (
     </div>
 );
 
-export default DealerFinancingMockup;
+export default ChannelFinancingMockup;

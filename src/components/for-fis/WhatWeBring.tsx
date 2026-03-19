@@ -12,7 +12,7 @@ const items = [
         ),
         number: '4',
         label: 'SCF Products',
-        desc: 'Dealer Financing, Supplier Financing, Invoice Factoring, and Working Capital Loans.',
+        desc: 'Channel Financing, Supplier Financing, Invoice Factoring, and Working Capital Loans.',
         accent: '#1a2d7a',
     },
     {

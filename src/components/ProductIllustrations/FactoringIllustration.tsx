@@ -165,6 +165,9 @@ const FactoringIllustration = () => (
             <circle cx="460" cy="350" r="3" fill="#f59e0b" opacity="0.15" />
             <circle cx="40" cy="50" r="2.5" fill="#5d71c4" opacity="0.12" />
             <rect x="460" y="120" width="5" height="5" rx="1" fill="#0a714e" opacity="0.1" transform="rotate(45 462.5 122.5)" />
+
+            {/* *illustrative purpose only */}
+            <text x="240" y="416" textAnchor="middle" fill="#6b7280" fontSize="7" fontFamily="inherit" opacity="0.5">*illustrative purpose only</text>
         </svg>
     </div>
 );

@@ -39,7 +39,7 @@ const founders = [
 
 const Founders = () => {
     return (
-        <section className={styles.founders}>
+        <section id="founders" className={styles.founders}>
             <div className={styles.container}>
                 <div className={styles.header}>
                     <span className={`${styles.badge} badge-animated`}>MEET THE FOUNDERS</span>

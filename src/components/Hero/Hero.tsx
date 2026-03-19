@@ -8,7 +8,7 @@ import HeroVisual from '../HeroVisual/HeroVisual';
 
 const PHRASES = [
     'Unlocking Credit in',
-    'Powering Every Dealer in',
+    'Powering Partners in',
     'Removing Barriers from',
     'Fueling Growth Across',
 ];

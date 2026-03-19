@@ -73,7 +73,7 @@ const benefits = {
             },
             {
                 headline: 'No Collateral Needed',
-                description: 'The approved invoice is your credential. No property papers, no fixed deposits, no personal guarantees required.',
+                description: 'The approved invoice is your credential. No property papers.',
             },
         ],
     },

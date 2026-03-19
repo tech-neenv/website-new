@@ -67,7 +67,7 @@ const HeroVisual = () => (
                 Total: 4×56+3×6=242   Offset: (420-242)/2=89
             */}
 
-            {/* Card 1: Dealer Financing */}
+            {/* Card 1: Channel Financing */}
             <g className={styles.card1}>
                 <rect x="4" y="89" width="148" height="56" rx="9" fill={C.white} filter="url(#hv-sh)" />
                 <rect x="4" y="89" width="148" height="56" rx="9" fill="none" stroke={C.grayLight} strokeWidth="0.6" />
@@ -79,7 +79,7 @@ const HeroVisual = () => (
                     <rect x="2" y="14" width="12" height="2" rx="1" fill={C.goldLight} opacity="0.4" />
                     <circle cx="13" cy="9" r="2" fill={C.goldLight} opacity="0.7" />
                 </g>
-                <text x="50" y="109" fill={C.navy} fontSize="10.5" fontWeight="700" fontFamily="inherit">Dealer Financing</text>
+                <text x="50" y="109" fill={C.navy} fontSize="10.5" fontWeight="700" fontFamily="inherit">Channel Financing</text>
                 <rect x="16" y="121" width="122" height="16" rx="4" fill={C.navy} opacity="0.03" />
                 <text x="22" y="132" fill={C.navy} fontSize="8" fontWeight="700" fontFamily="inherit">&#x20B9;25L</text>
                 <rect x="48" y="126" width="44" height="5" rx="2.5" fill={C.grayLight} />

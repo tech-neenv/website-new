@@ -12,7 +12,7 @@ const testimonials = [
         initials: "RK",
     },
     {
-        quote: "The approval process was incredibly fast. Within 24 hours, we had access to our credit line. Interest is charged only on utilization—amazing!",
+        quote: "The approval process was incredibly fast. Within 24 hours, we had access to our Credit Facility. Interest is charged only on utilization—amazing!",
         author: "Priya Sharma",
         role: "Owner, Distribution House",
         brand: "Sharma Traders",

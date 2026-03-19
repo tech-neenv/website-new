@@ -8,9 +8,9 @@ import styles from './Header.module.css';
 
 const products = [
     {
-        title: 'Dealer Financing',
-        description: 'Brand Led credit lines for dealer networks',
-        href: '/products/dealer-financing',
+        title: 'Channel Financing',
+        description: 'Brand Led Credit Facilities for dealer networks',
+        href: '/products/channel-financing',
         icon: <Layers size={22} strokeWidth={1.5} />,
     },
     {
@@ -72,7 +72,7 @@ const Header = () => {
     }, [isMobileMenuOpen]);
 
     const navItems = [
-        { label: 'About', href: '/#about' },
+        { label: 'About Us', href: '/#founders' },
         { label: 'How It Works', href: '/#how-it-works' },
         { label: 'For FIs', href: '/for-financial-institutions' },
         

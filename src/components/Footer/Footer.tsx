@@ -37,7 +37,7 @@ const Footer = () => {
                     <div className={styles.column}>
                         <h4>Company</h4>
                         <div className={styles.columnLinks}>
-                            <Link href="/#about" className={styles.columnLink}>About</Link>
+                            <Link href="/#founders" className={styles.columnLink}>About Us</Link>
                             <Link href="/#how-it-works" className={styles.columnLink}>How It Works</Link>
                             <Link href="/for-financial-institutions" className={styles.columnLink}>For FIs</Link>
                         </div>
@@ -46,7 +46,7 @@ const Footer = () => {
                     <div className={styles.column}>
                         <h4>Products</h4>
                         <div className={styles.columnLinks}>
-                            <Link href="/products/dealer-financing" className={styles.columnLink}>Dealer Financing</Link>
+                            <Link href="/products/channel-financing" className={styles.columnLink}>Channel Financing</Link>
                             <Link href="/products/working-capital-loan" className={styles.columnLink}>Working Capital Loan</Link>
                             <Link href="/products/invoice-factoring" className={styles.columnLink}>Factoring</Link>
                             <Link href="/products/supplier-financing" className={styles.columnLink}>Supplier Financing</Link>
