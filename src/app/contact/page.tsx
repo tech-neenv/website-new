@@ -84,12 +84,12 @@ export default function ContactPage() {
                                 <div className={styles.infoContent}>
                                     <h4>Email</h4>
                                     <p>
-                                        <a href="mailto:Info@neenvfin.com">Info@neenvfin.com</a>
+                                        <a href="mailto:info@neenvfin.com">info@neenvfin.com</a>
                                     </p>
                                 </div>
                             </div>
 
-                            <div className={styles.infoItem}>
+                            {/* <div className={styles.infoItem}>
                                 <div className={styles.infoIcon}>
                                     <Phone size={20} />
                                 </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                                     <h4>Phone</h4>
                                     <p>Mon - Fri, 9:00 AM - 6:00 PM IST</p>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div className={styles.infoItem}>
                                 <div className={styles.infoIcon}>
@@ -105,7 +105,7 @@ export default function ContactPage() {
                                 </div>
                                 <div className={styles.infoContent}>
                                     <h4>Office</h4>
-                                    <p>Gurugram, Haryana, India</p>
+                                    <p>Teloz spaces - 1st floor, AJ House, Marol Maroshi Road, Marol, Andheri East, Mumbai - 400059</p>
                                 </div>
                             </div>
                         </div>

@@ -9,7 +9,7 @@ import styles from './Header.module.css';
 const products = [
     {
         title: 'Channel Financing',
-        description: 'Brand Led Credit Facilities for dealer networks',
+        description: 'Brand Led Credit Facilities for distributor/dealer networks',
         href: '/products/channel-financing',
         icon: <Layers size={22} strokeWidth={1.5} />,
     },

@@ -37,6 +37,8 @@
     align-items: center;
     justify-content: center;
     min-width: 0;
+    /* Push illustration to the right edge, leaving ~80px from viewport */
+    margin-right: min(0px, calc(80px - var(--container-padding) - (100vw - var(--container-max)) / 2));
 }
 
 .backLink {
@@ -182,5 +184,6 @@
     .heroVisual {
         max-width: 480px;
         margin: 0 auto;
+        margin-right: auto;
     }
 }
