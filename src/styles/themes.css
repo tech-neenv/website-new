@@ -217,6 +217,52 @@ h4, .h4 {
   padding: 0 var(--container-padding);
 }
 
+/* ===== ANIMATED BADGE (spinning conic-gradient border) ===== */
+@property --badge-border-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes badge-border-spin {
+    to { --badge-border-angle: 360deg; }
+}
+
+.badge-animated {
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+    backdrop-filter: blur(8px);
+    border: none !important;
+}
+
+.badge-animated::before {
+    content: '';
+    position: absolute;
+    inset: -1.5px;
+    border-radius: inherit;
+    background: conic-gradient(
+        from var(--badge-border-angle, 0deg),
+        #1a2d7a 0%,
+        #5d71c4 25%,
+        #f590eb 50%,
+        #0a714e 75%,
+        #1a2d7a 100%
+    );
+    z-index: -2;
+    animation: badge-border-spin 3s linear infinite;
+    opacity: 0.7;
+}
+
+.badge-animated::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(250, 248, 244, 0.97), rgba(245, 242, 236, 0.95));
+    z-index: -1;
+}
+
 /* ===== BUTTONS ===== */
 .btn {
   display: inline-flex;
@@ -229,7 +275,7 @@ h4, .h4 {
   white-space: nowrap;
   text-decoration: none;
   font-size: var(--text-sm);
-  padding: 0.625rem 1.5rem;
+  padding: 0.5rem 1.5rem;
 }
 
 .btn-primary {
@@ -255,7 +301,7 @@ h4, .h4 {
 }
 
 .btn-lg {
-  padding: 0.875rem 2rem;
+  padding: 0.7rem 2rem;
   font-size: var(--text-base);
   border-radius: var(--radius-lg);
 }
