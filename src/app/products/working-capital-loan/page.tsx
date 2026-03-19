@@ -7,12 +7,16 @@ import WorkingCapitalIllustration from '@/components/ProductIllustrations/Workin
 import Footer from '@/components/Footer/Footer';
 
 export const metadata: Metadata = {
-    title: 'Short-Term Working Capital Loan - Neenv',
-    description: 'Flexible financing solution for immediate liquidity needs. Address day-to-day operations, seasonal demand, and short-term growth opportunities with collateral-free lending.',
+    title: 'Working Capital Loans — Short-Term Business Financing',
+    description: 'Short-term financing for channel partners. No collateral, no branch visits, fixed EMIs. AI-powered credit decisioning with 72-hour disbursal.',
+    keywords: ['working capital loan', 'MSME loan', 'short term business loan', 'unsecured business loan', 'digital lending India'],
     openGraph: {
-        title: 'Short-Term Working Capital Loan - Neenv',
-        description: 'Rapid access to collateral-free capital for your business. Flexible repayment aligned with your cash flow cycles.',
+        title: 'Working Capital Loans — Short-Term Business Financing | Neenv',
+        description: 'Short-term financing for channel partners. No collateral, no branch visits, fixed EMIs. AI-powered credit decisioning with 72-hour disbursal.',
         type: 'website',
+    },
+    alternates: {
+        canonical: 'https://www.neenvfin.com/products/working-capital-loan',
     },
 };
 

@@ -4,8 +4,11 @@ import Footer from '@/components/Footer/Footer';
 import styles from './LegalPage.module.css';
 
 export const metadata: Metadata = {
-    title: 'Privacy Policy - Neenv',
+    title: 'Privacy Policy',
     description: 'Privacy Policy for Neenv Financial Technologies. Learn how we collect, use, and protect your personal information.',
+    alternates: {
+        canonical: 'https://www.neenvfin.com/privacy-policy',
+    },
 };
 
 export default function PrivacyPolicyPage() {

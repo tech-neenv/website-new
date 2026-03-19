@@ -1,0 +1,16 @@
+{
+  "name": "Neenv",
+  "short_name": "Neenv",
+  "description": "AI-Native Supply Chain Finance Platform",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#1a2d7a",
+  "icons": [
+    {
+      "src": "/images/logos/neenv.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

@@ -7,12 +7,16 @@ import FactoringIllustration from '@/components/ProductIllustrations/FactoringIl
 import Footer from '@/components/Footer/Footer';
 
 export const metadata: Metadata = {
-    title: 'Factoring - Neenv',
-    description: 'Convert approved receivables into immediate working capital. Same-day liquidity on invoices, collateral-free. Non-recourse options available.',
+    title: 'Invoice Factoring — Convert Receivables to Working Capital',
+    description: 'Accelerate cash flow by converting trade receivables into immediate working capital. Same-day funds, no collateral, not a loan. 90% advance rate.',
+    keywords: ['invoice factoring', 'receivable financing', 'invoice discounting', 'trade receivables', 'same day funding'],
     openGraph: {
-        title: 'Factoring - Neenv',
-        description: 'Unlock cash tied in receivables. Same-day liquidity on approved invoices. Digital-first, collateral-free Factoring for channel partners.',
+        title: 'Invoice Factoring — Convert Receivables to Working Capital | Neenv',
+        description: 'Accelerate cash flow by converting trade receivables into immediate working capital. Same-day funds, no collateral, not a loan.',
         type: 'website',
+    },
+    alternates: {
+        canonical: 'https://www.neenvfin.com/products/invoice-factoring',
     },
 };
 

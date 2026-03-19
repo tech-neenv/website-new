@@ -4,8 +4,11 @@ import Footer from '@/components/Footer/Footer';
 import styles from '../privacy-policy/LegalPage.module.css';
 
 export const metadata: Metadata = {
-    title: 'Terms & Conditions - Neenv',
+    title: 'Terms & Conditions',
     description: 'Terms and Conditions for using Neenv Financial Technologies supply chain financing platform.',
+    alternates: {
+        canonical: 'https://www.neenvfin.com/terms-and-conditions',
+    },
 };
 
 export default function TermsAndConditionsPage() {

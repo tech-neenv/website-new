@@ -2,29 +2,58 @@ import type { Metadata } from 'next';
 import '@/styles/themes.css';
 import ScrollAnimationProvider from '@/components/ScrollAnimationProvider';
 import FinanceElements from '@/components/FinanceElements/FinanceElements';
+import { OrganizationSchema } from '@/components/seo/StructuredData';
 
 export const metadata: Metadata = {
-    title: 'Neenv Channel Finance for India\'s Supply Chains',
-    description: 'AI-native supply chain finance platform. Collateral-free financing for dealers, suppliers, and distributors in Brand-led ecosystems. 72-hour disbursal.',
-    keywords: 'channel finance, supply chain finance, channel financing, supplier financing, Factoring, working capital, AI fintech, collateral-free lending',
+    metadataBase: new URL('https://www.neenvfin.com'),
+    title: {
+        default: 'Neenv — AI-Native Supply Chain Finance Platform',
+        template: '%s | Neenv',
+    },
+    description: 'Unlocking credit for India\'s brand-led dealer networks. Collateral-free channel financing, working capital loans, factoring, and supplier financing. Digital first. 72-hour disbursal.',
+    keywords: ['supply chain finance', 'channel finance', 'dealer financing', 'MSME lending', 'collateral free loans', 'working capital India', 'invoice factoring', 'supplier financing', 'AI lending platform'],
     icons: {
         icon: '/images/favicon.ico',
     },
     openGraph: {
-        title: 'Neenv Channel Finance for India\'s Supply Chains',
-        description: 'Collateral-free financing for dealers, suppliers, and distributors. 72-hour disbursal. AI-native supply chain platform.',
         type: 'website',
         locale: 'en_IN',
+        url: 'https://www.neenvfin.com',
         siteName: 'Neenv',
+        title: 'Neenv — AI-Native Supply Chain Finance Platform',
+        description: 'Unlocking credit for India\'s brand-led dealer networks. Collateral-free channel financing, working capital loans, factoring, and supplier financing.',
+        images: [
+            {
+                url: '/api/og',
+                width: 1200,
+                height: 630,
+                alt: 'Neenv — Supply Chain Finance Platform',
+            },
+        ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Neenv Channel Finance for India\'s Supply Chains',
-        description: 'Collateral-free channel finance. 72-hour disbursal. AI-native supply chain platform.',
+        title: 'Neenv — AI-Native Supply Chain Finance Platform',
+        description: 'Unlocking credit for India\'s brand-led dealer networks.',
+        images: ['/api/og'],
     },
     robots: {
         index: true,
         follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
+    alternates: {
+        canonical: 'https://www.neenvfin.com',
+    },
+    other: {
+        'theme-color': '#1a2d7a',
+        'author': 'Neenv Financial Technologies',
     },
 };
 
@@ -42,8 +71,11 @@ export default function RootLayout({
                     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
                     rel="stylesheet"
                 />
+                <link rel="apple-touch-icon" href="/images/logos/neenv.png" />
+                <link rel="manifest" href="/manifest.json" />
             </head>
             <body>
+                <OrganizationSchema />
                 <div style={{ position: 'relative' }}>
                     <FinanceElements />
                     <ScrollAnimationProvider>
