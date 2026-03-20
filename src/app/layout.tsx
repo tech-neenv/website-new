@@ -2,26 +2,29 @@ import type { Metadata } from 'next';
 import '@/styles/themes.css';
 import ScrollAnimationProvider from '@/components/ScrollAnimationProvider';
 import FinanceElements from '@/components/FinanceElements/FinanceElements';
-import { OrganizationSchema } from '@/components/seo/StructuredData';
+import { OrganizationSchema, WebSiteSchema, SiteNavigationSchema } from '@/components/seo/StructuredData';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://www.neenvfin.com'),
     title: {
-        default: 'Neenv — AI-Native Supply Chain Finance Platform',
+        default: 'Neenv: AI Native Supply Chain Platform',
         template: '%s | Neenv',
     },
     description: 'Unlocking credit for India\'s brand-led dealer networks. Collateral-free channel financing, working capital loans, factoring, and supplier financing. Digital first. 72-hour disbursal.',
     keywords: ['supply chain finance', 'channel finance', 'dealer financing', 'MSME lending', 'collateral free loans', 'working capital India', 'invoice factoring', 'supplier financing', 'AI lending platform'],
     icons: {
-        icon: '/images/favicon.ico',
+        icon: [
+            { url: '/images/logos/neenv-icon.svg', type: 'image/svg+xml' },
+            { url: '/images/favicon.ico', sizes: '32x32' },
+        ],
     },
     openGraph: {
         type: 'website',
         locale: 'en_IN',
         url: 'https://www.neenvfin.com',
-        siteName: 'Neenv',
-        title: 'Neenv — AI-Native Supply Chain Finance Platform',
+        siteName: 'Neenv: AI Native Supply Chain Platform',
+        title: 'Neenv: AI Native Supply Chain Platform',
         description: 'Unlocking credit for India\'s brand-led dealer networks. Collateral-free channel financing, working capital loans, factoring, and supplier financing.',
         images: [
             {
@@ -78,6 +81,8 @@ export default function RootLayout({
             <body>
                 <GoogleAnalytics />
                 <OrganizationSchema />
+                <WebSiteSchema />
+                <SiteNavigationSchema />
                 <div style={{ position: 'relative' }}>
                     <FinanceElements />
                     <ScrollAnimationProvider>
