@@ -24,7 +24,7 @@ const steps = [
         icon: <Sparkles size={20} strokeWidth={2} />,
         title: 'AI Credit Decisioning',
         time: 'Rule Based ML',
-        description: 'Brand data, bureau scores, and cash flow patterns — all in one model.',
+        description: 'Brand data, bureau scores, credit surrogates and cash flow patterns - all in one model.',
     },
     {
         number: 4,
