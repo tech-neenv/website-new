@@ -14,10 +14,7 @@ export const metadata: Metadata = {
     description: 'Neenv is an NBFC-powered channel finance platform offering revolving credit, working capital loans, and supply chain financing to MSME dealer networks across India.',
     keywords: ['supply chain finance', 'channel finance', 'dealer financing', 'MSME lending', 'collateral free loans', 'working capital India', 'invoice factoring', 'supplier financing', 'AI lending platform'],
     icons: {
-        icon: [
-            { url: '/images/logos/neenv-icon.svg', type: 'image/svg+xml' },
-            { url: '/images/favicon.ico', sizes: '32x32' },
-        ],
+        icon: '/images/favicon.ico',
     },
     openGraph: {
         type: 'website',
