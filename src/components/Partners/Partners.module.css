@@ -1,0 +1,219 @@
+/* ===== PARTNERS — auto-scrolling NBFC marquee ===== */
+.partners {
+    padding: var(--space-20) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Section divider — matches the rule above HOW IT WORKS */
+.partners::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--divider-gradient);
+}
+
+.header {
+    max-width: 700px;
+    margin: 0 auto var(--space-12);
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px var(--space-4);
+    background: rgba(26, 45, 122, 0.04);
+    border: 1px solid rgba(26, 45, 122, 0.1);
+    border-radius: var(--radius-full);
+    font-size: var(--text-2xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-5);
+    letter-spacing: 0.08em;
+}
+
+.title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+}
+
+/* ----- Marquee viewport ----- */
+.marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Fade the edges so cards enter and leave softly */
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll var(--duration, 60s) linear infinite;
+}
+
+/* Static fallback when there are too few cards to fill the strip */
+.staticRow {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+/* A lone partner gets a larger, centred card rather than a lost-looking chip */
+.staticRow .card {
+    min-width: 360px;
+    padding: var(--space-8) var(--space-10);
+    gap: var(--space-6);
+}
+
+/* Hover or keyboard focus anywhere in the strip freezes it */
+.marquee:hover .track,
+.marquee:focus-within .track {
+    animation-play-state: paused;
+}
+
+.group {
+    display: flex;
+    gap: var(--space-4);
+    padding-right: var(--space-4);
+    flex-shrink: 0;
+}
+
+/* Shift by exactly one group width so the loop is seamless at any partner count */
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(calc(-100% / var(--repeat, 2))); }
+}
+
+/* ----- Cards ----- */
+.card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-shrink: 0;
+    min-width: 220px;
+    padding: var(--space-5) var(--space-6);
+    background: var(--glass-bg-strong);
+    border: var(--border-default);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card-premium);
+    transition: transform var(--duration-base) var(--ease-out),
+        box-shadow var(--duration-base) var(--ease-out),
+        border-color var(--duration-base) var(--ease-out);
+}
+
+.clickable:hover {
+    transform: translateY(-4px);
+    border-color: rgba(26, 45, 122, 0.25);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.clickable:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+.logoWrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: var(--radius-lg);
+    background: rgba(26, 45, 122, 0.06);
+    color: var(--color-primary);
+}
+
+/* Sized for wide wordmark logos — constrained on both axes so any aspect ratio fits */
+.logoImg {
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    max-height: 64px;
+    object-fit: contain;
+}
+
+.name {
+    font-size: var(--text-base);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+}
+
+.arrow {
+    display: inline-flex;
+    margin-left: auto;
+    color: var(--text-muted);
+    transition: color var(--duration-base) var(--ease-out),
+        transform var(--duration-base) var(--ease-out);
+}
+
+.clickable:hover .arrow {
+    color: var(--color-primary);
+    transform: translate(2px, -2px);
+}
+
+@media (max-width: 768px) {
+    .partners {
+        padding: var(--space-12) 0;
+    }
+
+    .header {
+        margin-bottom: var(--space-10);
+    }
+
+    .title {
+        font-size: var(--text-3xl);
+    }
+
+    .card {
+        min-width: 180px;
+        padding: var(--space-4) var(--space-5);
+    }
+
+    .staticRow .card {
+        min-width: 0;
+        width: 100%;
+        max-width: 340px;
+        padding: var(--space-6);
+        gap: var(--space-4);
+    }
+
+    .logoImg {
+        max-width: 220px;
+        max-height: 52px;
+    }
+
+    .track {
+        animation-duration: 40s;
+    }
+}
+
+/* Users who ask for less motion get a manually scrollable strip instead */
+@media (prefers-reduced-motion: reduce) {
+    .marquee {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .track {
+        animation: none;
+    }
+}

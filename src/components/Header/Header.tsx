@@ -74,7 +74,7 @@ const Header = () => {
     const navItems = [
         { label: 'How It Works', href: '/#how-it-works' },
         { label: 'For FIs', href: '/for-financial-institutions' },
-        { label: 'About Us', href: '/#founders' },
+        { label: 'About Us', href: '/about-us' },
         
         
     ];

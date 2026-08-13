@@ -1,0 +1,113 @@
+/* ===== OUR MISSION ===== */
+.mission {
+    padding: var(--space-20) 0;
+    position: relative;
+}
+
+.header {
+    max-width: 780px;
+    margin: 0 auto var(--space-16);
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px var(--space-4);
+    background: rgba(26, 45, 122, 0.04);
+    border: 1px solid rgba(26, 45, 122, 0.1);
+    border-radius: var(--radius-full);
+    font-size: var(--text-2xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-5);
+    letter-spacing: 0.08em;
+}
+
+.title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    color: var(--text-primary);
+    margin-bottom: var(--space-5);
+    letter-spacing: -0.02em;
+}
+
+.intro {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+}
+
+.card {
+    padding: var(--space-8) var(--space-6);
+    background: var(--glass-bg-strong);
+    border: var(--border-default);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card-premium);
+    transition: transform var(--duration-base) var(--ease-out),
+        box-shadow var(--duration-base) var(--ease-out);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-lg);
+    background: rgba(26, 45, 122, 0.06);
+    color: var(--color-primary);
+    margin-bottom: var(--space-5);
+}
+
+.cardTitle {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    line-height: var(--leading-snug);
+    margin-bottom: var(--space-3);
+    letter-spacing: -0.01em;
+}
+
+.cardDescription {
+    font-size: var(--text-xs);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .mission {
+        padding: var(--space-12) 0;
+    }
+
+    .header {
+        margin-bottom: var(--space-10);
+    }
+
+    .title {
+        font-size: var(--text-3xl);
+    }
+}
+
+@media (max-width: 560px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

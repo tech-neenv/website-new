@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Building2, ShieldCheck, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import styles from './ContactPage.module.css';
@@ -89,15 +89,17 @@ export default function ContactPage() {
                                 </div>
                             </div>
 
-                            {/* <div className={styles.infoItem}>
+                            <div className={styles.infoItem}>
                                 <div className={styles.infoIcon}>
                                     <Phone size={20} />
                                 </div>
                                 <div className={styles.infoContent}>
                                     <h4>Phone</h4>
-                                    <p>Mon - Fri, 9:00 AM - 6:00 PM IST</p>
+                                    <p>
+                                        <a href="tel:+917738735740">+91 77387 35740</a>
+                                    </p>
                                 </div>
-                            </div> */}
+                            </div>
 
                             <div className={styles.infoItem}>
                                 <div className={styles.infoIcon}>
@@ -252,6 +254,131 @@ export default function ContactPage() {
                             )}
                         </div>
                     </div>
+
+                    {/* Statutory / grievance disclosure */}
+                    <section className={styles.reachUs}>
+                        <div className={styles.reachUsHeader}>
+                            <h2 className={styles.reachUsTitle}>Reach Us</h2>
+                            <p className={styles.reachUsSubtitle}>
+                                Corporate identity and grievance redressal details for
+                                NEENV FINANCIAL TECHNOLOGIES PRIVATE LIMITED.
+                            </p>
+                        </div>
+
+                        <div className={styles.reachGrid}>
+                            {/* Company details */}
+                            <div className={styles.reachCard}>
+                                <div className={styles.reachCardHead}>
+                                    <div className={styles.reachCardIcon}>
+                                        <Building2 size={20} />
+                                    </div>
+                                    <h3 className={styles.reachCardTitle}>Company Details</h3>
+                                </div>
+
+                                <div className={styles.detailGrid}>
+                                    {/* TODO: add the company CIN once confirmed from the MCA record */}
+                                    <div className={styles.detailRow}>
+                                        <span className={styles.detailLabel}>CIN</span>
+                                        <span className={`${styles.detailValue} ${styles.pending}`}>
+                                            &mdash;
+                                        </span>
+                                    </div>
+
+                                    <div className={styles.detailRow}>
+                                        <span className={styles.detailLabel}>Company Name</span>
+                                        <span className={styles.detailValue}>
+                                            NEENV FINANCIAL TECHNOLOGIES PRIVATE LIMITED
+                                        </span>
+                                    </div>
+
+                                    <div className={styles.detailRow}>
+                                        <span className={styles.detailLabel}>
+                                            Registered Office Address
+                                        </span>
+                                        <span className={styles.detailValue}>
+                                            Teloz Spaces, 1st Floor, AJ House, Marol Maroshi Road,
+                                            Marol, Andheri East, Mumbai, Maharashtra &ndash; 400059
+                                        </span>
+                                    </div>
+
+                                    <div className={styles.detailRow}>
+                                        <span className={styles.detailLabel}>
+                                            Corporate Office Address
+                                        </span>
+                                        <span className={styles.detailValue}>
+                                            B-90, 3rd Floor, Greenwood City, Sector-45, Gurugram,
+                                            Haryana &ndash; 122003
+                                        </span>
+                                    </div>
+
+                                    <div className={styles.detailRow}>
+                                        <span className={styles.detailLabel}>Contact No</span>
+                                        <span className={styles.detailValue}>
+                                            <a href="tel:+917738735740">+91 77387 35740</a>
+                                        </span>
+                                    </div>
+
+                                    <div className={styles.detailRow}>
+                                        <span className={styles.detailLabel}>Email ID</span>
+                                        <span className={styles.detailValue}>
+                                            <a href="mailto:Info@neenvfin.com">Info@neenvfin.com</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Grievance officer */}
+                            <div className={styles.reachCard}>
+                                <div className={styles.reachCardHead}>
+                                    <div className={styles.reachCardIcon}>
+                                        <ShieldCheck size={20} />
+                                    </div>
+                                    <h3 className={styles.reachCardTitle}>
+                                        Nodal Grievance Redressal Officer
+                                    </h3>
+                                </div>
+
+                                <div className={styles.detailGrid}>
+                                    <div className={styles.detailRow}>
+                                        <span className={styles.detailLabel}>Name</span>
+                                        <span className={styles.detailValue}>
+                                            Mr. Abhishek Verma
+                                        </span>
+                                    </div>
+
+                                    <div className={styles.detailRow}>
+                                        <span className={styles.detailLabel}>Address</span>
+                                        <span className={styles.detailValue}>
+                                            Neenv Financial Technologies Private Limited, B-90, 3rd
+                                            Floor, Greenwood City, Sector-45, Gurugram, Haryana
+                                            &ndash; 122003
+                                        </span>
+                                    </div>
+
+                                    <div className={styles.detailRow}>
+                                        <span className={styles.detailLabel}>Contact No.</span>
+                                        <span className={styles.detailValue}>
+                                            <a href="tel:+919810174406">+91 98101 74406</a>
+                                        </span>
+                                    </div>
+
+                                    <div className={styles.detailRow}>
+                                        <span className={styles.detailLabel}>Email ID</span>
+                                        <span className={styles.detailValue}>
+                                            <a href="mailto:abhishek.verma@neenvfin.com">
+                                                abhishek.verma@neenvfin.com
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <a href="/grievance-redressal" className={styles.policyLink}>
+                                    View our Grievance Redressal Policy
+                                    <ArrowRight size={14} strokeWidth={2.5} />
+                                </a>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </main>
             <Footer />

@@ -39,7 +39,7 @@ const Footer = () => {
                         <div className={styles.columnLinks}>
                             <Link href="/#how-it-works" className={styles.columnLink}>How It Works</Link>
                             <Link href="/for-financial-institutions" className={styles.columnLink}>For FIs</Link>
-                            <Link href="/#founders" className={styles.columnLink}>About Us</Link>
+                            <Link href="/about-us" className={styles.columnLink}>About Us</Link>
                         </div>
                     </div>
 
@@ -50,6 +50,16 @@ const Footer = () => {
                             <Link href="/products/working-capital-loan" className={styles.columnLink}>Working Capital Loan</Link>
                             <Link href="/products/invoice-factoring" className={styles.columnLink}>Factoring</Link>
                             <Link href="/products/supplier-financing" className={styles.columnLink}>Supplier Financing</Link>
+                        </div>
+                    </div>
+
+                    <div className={styles.column}>
+                        <h4>Quick Links</h4>
+                        <div className={styles.columnLinks}>
+                            <Link href="/contact" className={styles.columnLink}>Contact Us</Link>
+                            <Link href="/privacy-policy" className={styles.columnLink}>Privacy Policy</Link>
+                            <Link href="/terms-and-conditions" className={styles.columnLink}>Terms &amp; Conditions</Link>
+                            <Link href="/grievance-redressal" className={styles.columnLink}>Grievance Redressal</Link>
                         </div>
                     </div>
 

@@ -82,6 +82,7 @@ export function SiteNavigationSchema() {
         { name: 'Invoice Factoring', url: `${baseUrl}/products/invoice-factoring` },
         { name: 'Supplier Financing', url: `${baseUrl}/products/supplier-financing` },
         { name: 'For Financial Institutions', url: `${baseUrl}/for-financial-institutions` },
+        { name: 'About Us', url: `${baseUrl}/about-us` },
         { name: 'Contact Us', url: `${baseUrl}/contact` },
     ];
 
