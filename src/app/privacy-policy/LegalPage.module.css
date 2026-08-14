@@ -84,7 +84,7 @@
 
 .table {
     width: 100%;
-    min-width: 640px;
+    min-width: 480px;
     border-collapse: collapse;
     font-size: var(--text-xs);
     line-height: var(--leading-normal);

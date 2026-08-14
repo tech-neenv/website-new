@@ -98,7 +98,6 @@ export default function GrievanceRedressalPage() {
                                             <tr>
                                                 <th scope="col"></th>
                                                 <th scope="col">FFPL (RE)</th>
-                                                <th scope="col">Neenv (LSP)</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -110,20 +109,10 @@ export default function GrievanceRedressalPage() {
                                                     <p>CIN: U67190DL2007FTC162475</p>
                                                     <p>Address: 2-E/8, 3rd and 4th Floor, Jhandewalan Extension, New Delhi, 110055</p>
                                                 </td>
-                                                <td>
-                                                    <p><strong>Neenv Financial Technologies Private Limited</strong></p>
-                                                    <p>Address: B-90, 3rd Floor, Greenwood City, Sector-45, Gurugram, Haryana-122003</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Product</th>
-                                                <td>&mdash;</td>
-                                                <td>Term Loan &ndash; Supplier Financing</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Services</th>
                                                 <td>NBFC</td>
-                                                <td>Loan sourcing, collections and recovery</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Customer Service</th>
@@ -131,11 +120,6 @@ export default function GrievanceRedressalPage() {
                                                     <p>Ph.: <a href="tel:+911149580301">011 &ndash; 49580301</a></p>
                                                     <p>Email: <a href="mailto:customerservice@fexprime.com">customerservice@fexprime.com</a></p>
                                                     <p>Address: 2E/8, 4th Floor, Jhandewalan Extn., New Delhi 110055</p>
-                                                </td>
-                                                <td>
-                                                    <p>Ph.: <a href="tel:+917738735740">+91 &ndash; 7738735740</a></p>
-                                                    <p>Email: <a href="mailto:rahul@neenvfin.com">rahul@neenvfin.com</a></p>
-                                                    <p>Address: B-90, 3rd Floor, Greenwood City, Sector-45, Gurugram 122003</p>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -146,12 +130,6 @@ export default function GrievanceRedressalPage() {
                                                     <p>Email: <a href="mailto:pno@fexprime.com">pno@fexprime.com</a></p>
                                                     <p>Address: 2E/8, 3rd &amp; 4th Floor, Jhandewalan Extension, New Delhi - 110055</p>
                                                 </td>
-                                                <td>
-                                                    <p>Mr. Rahul Chaplot</p>
-                                                    <p>Ph.: <a href="tel:+917738735740">+91 7738735740</a></p>
-                                                    <p>Email: <a href="mailto:rahul@neenvfin.com">rahul@neenvfin.com</a></p>
-                                                    <p>Address: B-90, 3rd Floor, Greenwood City, Sector-45, Gurugram, Haryana-122003</p>
-                                                </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Grievance Redressal Officer</th>
@@ -160,12 +138,6 @@ export default function GrievanceRedressalPage() {
                                                     <p>Ph: <a href="tel:+911143611114">011 &ndash; 4361 1114</a></p>
                                                     <p>Email: <a href="mailto:grievanceofficer@fexprime.com">grievanceofficer@fexprime.com</a></p>
                                                     <p>Address: 2E/8, 3rd &amp; 4th Floor, Jhandewalan Extension, New Delhi - 110055</p>
-                                                </td>
-                                                <td>
-                                                    <p>Mr. Abhishek Verma</p>
-                                                    <p>Ph.: <a href="tel:+919810174406">+91 98101 74406</a></p>
-                                                    <p>Email: <a href="mailto:abhishek.verma@neenvfin.com">abhishek.verma@neenvfin.com</a></p>
-                                                    <p>Address: B-90, 3rd Floor, Greenwood City, Sector-45, Gurugram, Haryana-122003</p>
                                                 </td>
                                             </tr>
                                         </tbody>
