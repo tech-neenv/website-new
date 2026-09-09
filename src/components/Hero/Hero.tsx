@@ -154,7 +154,7 @@ const Hero = () => {
                     </h1>
 
                     <p className={styles.description}>
-                    Financially empowering under-served MICRO & SMALL business partners for India's brand led ecosystem. Digital First. Collateral Free.
+                    Financially empowering under-served micro & small business partners for India's brand led ecosystem. Digital First. Collateral Free.
                     </p>
 
                     <div className={styles.actions}>

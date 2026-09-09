@@ -57,7 +57,7 @@ export default function GrievanceRedressalPage() {
                                     To help us resolve your complaint quickly, please include your name, registered mobile number or email, your company name, the nature of the issue, and any reference or transaction number available to you.
                                 </p>
                                 <p>
-                                    We will acknowledge your complaint within <strong>3 working days</strong> of receipt and aim to resolve it within <strong>15 working days</strong>. Where a complaint requires additional investigation, we will inform you of the reason for the delay and the expected timeline.
+                                    We will acknowledge your complaint within <strong>3 working days</strong> of receipt and aim to resolve it within <strong>7 working days</strong>. Where a complaint requires additional investigation, we will inform you of the reason for the delay and the expected timeline.
                                 </p>
                             </div>
                         </section>
@@ -106,7 +106,7 @@ export default function GrievanceRedressalPage() {
                                                 <td>
                                                     <p><strong>Fexprime Finance Pvt. Ltd.</strong></p>
                                                     <p>(Formerly known as Bussan Auto Finance India Pvt. Ltd.)</p>
-                                                    <p>CIN: U67190DL2007FTC162475</p>
+                                                    <p>CIN: U66190HR2025PTC135907</p>
                                                     <p>Address: 2-E/8, 3rd and 4th Floor, Jhandewalan Extension, New Delhi, 110055</p>
                                                 </td>
                                             </tr>
@@ -175,7 +175,7 @@ export default function GrievanceRedressalPage() {
                         </section>
 
                         <section className={styles.section}>
-                            <h2 className={styles.sectionTitle}>6. Registered Office</h2>
+                            <h2 className={styles.sectionTitle}>6. Corporate Office</h2>
                             <div className={styles.sectionContent}>
                                 <div className={styles.contactInfo}>
                                     <p><strong>NEENV FINANCIAL TECHNOLOGIES PRIVATE LIMITED</strong></p>

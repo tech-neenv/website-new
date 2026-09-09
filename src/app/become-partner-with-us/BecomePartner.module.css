@@ -1,0 +1,280 @@
+/* ===== BECOME A CAPITAL PARTNER ===== */
+
+/* ----- Hero ----- */
+.hero {
+    position: relative;
+    padding: calc(var(--space-32) + var(--space-4)) 0 var(--space-16);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -45%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(26, 45, 122, 0.06) 0%, transparent 62%);
+    pointer-events: none;
+}
+
+.heroInner {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px var(--space-4);
+    background: rgba(26, 45, 122, 0.04);
+    border: 1px solid rgba(26, 45, 122, 0.1);
+    border-radius: var(--radius-full);
+    font-size: var(--text-2xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-6);
+}
+
+.heroTitle {
+    font-size: var(--text-5xl);
+    font-weight: var(--font-extrabold);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin-bottom: var(--space-5);
+}
+
+.accent {
+    background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.heroText {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin: 0 auto var(--space-8);
+}
+
+.heroActions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.btnSecondary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: transform var(--duration-base) var(--ease-out),
+        box-shadow var(--duration-base) var(--ease-out),
+        background-color var(--duration-base) var(--ease-out),
+        border-color var(--duration-base) var(--ease-out);
+    background: var(--glass-bg-strong);
+    border: var(--border-primary);
+    color: var(--color-primary);
+}
+
+.btnSecondary:hover {
+    border-color: rgba(26, 45, 122, 0.3);
+    transform: translateY(-2px);
+}
+
+.btnSecondary:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+/* ----- Shared section shell ----- */
+.section,
+.sectionAlt {
+    position: relative;
+    padding: var(--space-20) 0;
+}
+
+.section::before,
+.sectionAlt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--divider-gradient);
+}
+
+.sectionAlt {
+    background: rgba(26, 45, 122, 0.015);
+}
+
+.sectionHeader {
+    max-width: 680px;
+    margin: 0 auto var(--space-12);
+    text-align: center;
+}
+
+.sectionTitle {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+.sectionSubtitle {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+}
+
+/* ----- Audience ----- */
+.audienceRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+}
+
+.audienceCard {
+    padding: var(--space-8);
+    background: var(--color-white);
+    border: var(--border-default);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card-premium);
+}
+
+.audienceIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: var(--space-4);
+    border-radius: var(--radius-lg);
+    background: rgba(26, 45, 122, 0.06);
+    color: var(--color-primary);
+}
+
+.audienceLabel {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-3);
+}
+
+.audienceText {
+    font-size: var(--text-xs);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+}
+
+/* ----- Steps ----- */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-6);
+    list-style: none;
+}
+
+.step {
+    position: relative;
+    padding: var(--space-8) var(--space-6);
+    background: var(--glass-bg-strong);
+    border: var(--border-default);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card-premium);
+}
+
+.stepNumber {
+    display: block;
+    font-size: var(--text-4xl);
+    font-weight: var(--font-extrabold);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: rgba(26, 45, 122, 0.16);
+    margin-bottom: var(--space-4);
+}
+
+.stepTitle {
+    font-size: var(--text-base);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.stepText {
+    font-size: var(--text-xs);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+}
+
+.processNote {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--space-2);
+    max-width: 700px;
+    margin: var(--space-10) auto 0;
+    text-align: center;
+    font-size: var(--text-xs);
+    line-height: var(--leading-relaxed);
+    color: var(--text-muted);
+}
+
+.processNote svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: var(--space-24) 0 var(--space-12);
+    }
+
+    .heroTitle {
+        font-size: var(--text-4xl);
+    }
+
+    .btnSecondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .section,
+    .sectionAlt {
+        padding: var(--space-12) 0;
+    }
+
+    .sectionHeader {
+        margin-bottom: var(--space-10);
+    }
+
+    .sectionTitle {
+        font-size: var(--text-3xl);
+    }
+
+    .audienceRow,
+    .steps {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .audienceCard,
+    .step {
+        padding: var(--space-6);
+    }
+}

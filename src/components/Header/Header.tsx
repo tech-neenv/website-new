@@ -74,6 +74,8 @@ const Header = () => {
     const navItems = [
         { label: 'How It Works', href: '/#how-it-works' },
         { label: 'For FIs', href: '/for-financial-institutions' },
+        // Hidden for now — restore when the partner network is ready to publicise.
+        // { label: 'Capital Partners', href: '/capital-partners' },
         { label: 'About Us', href: '/about-us' },
         
         

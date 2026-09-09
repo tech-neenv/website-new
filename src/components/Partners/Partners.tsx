@@ -1,24 +1,7 @@
 import Image from 'next/image';
 import { ArrowUpRight, Landmark } from 'lucide-react';
 import styles from './Partners.module.css';
-
-type Partner = {
-    /** Display name — also the alt text when a logo is supplied. */
-    name: string;
-    /** Opened in a new tab on click. Leave empty to render a non-clickable card. */
-    url: string;
-    /** Logo in /public/images/partners — falls back to an icon + the name. */
-    logo?: string;
-};
-
-/* Add each new NBFC here — the heading count and the marquee adapt automatically. */
-const partners: Partner[] = [
-    {
-        name: 'Fexprime Finance',
-        url: 'https://www.fexprime.com/Grievance-Redressal-Details',
-        logo: '/images/partners/fexprime.jpg',
-    },
-];
+import { partners, type Partner } from '@/data/partners';
 
 /* Below this many cards the row can't fill the screen, so it renders centred and static
    instead of scrolling a near-empty strip. Add a 5th partner and the marquee kicks in. */
