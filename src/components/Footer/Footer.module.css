@@ -231,3 +231,16 @@
         gap: var(--space-4);
     }
 }
+
+/* ===== ACTIVE LINK =====
+   Marks the page currently open. Full white against the muted default so the
+   current location is obvious at a glance. */
+.columnLinkActive {
+    color: #ffffff;
+    font-weight: var(--font-semibold);
+}
+
+.legalLinkActive {
+    color: #ffffff;
+    font-weight: var(--font-semibold);
+}

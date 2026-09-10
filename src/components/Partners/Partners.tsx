@@ -1,13 +1,18 @@
 import Image from 'next/image';
 import { ArrowUpRight, Landmark } from 'lucide-react';
 import styles from './Partners.module.css';
-import { partners, type Partner } from '@/data/partners';
+import { partners, servesRawLogo, type Partner } from '@/data/partners';
 
 /* Below this many cards the row can't fill the screen, so it renders centred and static
-   instead of scrolling a near-empty strip. Add a 5th partner and the marquee kicks in. */
-const MIN_CARDS_TO_SCROLL = 5;
+   instead of scrolling a near-empty strip. At four the strip carries itself — and the
+   marquee beats a four-high stack of full-width cards on mobile. */
+const MIN_CARDS_TO_SCROLL = 4;
 /* A scrolling track repeats the set until it comfortably overflows the widest viewport. */
 const MIN_CARDS_ON_TRACK = 10;
+
+/* The network now includes banks as well as NBFCs, so the heading only claims
+   "NBFC" while that is still true of every partner on the list. */
+const allNbfc = partners.every((partner) => partner.category === 'NBFC');
 
 const PartnerCard = ({ partner, duplicate = false }: { partner: Partner; duplicate?: boolean }) => {
     const inner = (
@@ -16,9 +21,10 @@ const PartnerCard = ({ partner, duplicate = false }: { partner: Partner; duplica
                 <Image
                     src={partner.logo}
                     alt={partner.name}
-                    width={1000}
-                    height={200}
+                    width={partner.logoWidth ?? 1000}
+                    height={partner.logoHeight ?? 200}
                     sizes="(max-width: 768px) 220px, 300px"
+                    unoptimized={servesRawLogo(partner.logo)}
                     className={styles.logoImg}
                 />
             ) : (
@@ -72,12 +78,13 @@ const Partners = () => {
                     <span className={`${styles.badge} badge-animated`}>OUR LENDING PARTNERS</span>
                     <h2 className={styles.title}>
                         {count === 1
-                            ? 'Backed by Our NBFC Lending Partner'
-                            : `Backed by ${count} NBFC Partners`}
+                            ? `Backed by Our ${allNbfc ? 'NBFC ' : ''}Lending Partner`
+                            : `Backed by ${count} ${allNbfc ? 'NBFC' : 'Lending'} Partners`}
                     </h2>
                     <p className={styles.subtitle}>
-                        Neenv originates and manages the assets. Our NBFC lending partners bring
-                        the capital — so channel partners get sanctioned faster, at scale.
+                        Neenv originates and manages the assets. Our {allNbfc ? 'NBFC ' : ''}lending
+                        partners bring the capital — so channel partners get sanctioned faster,
+                        at scale.
                     </p>
                 </div>
 

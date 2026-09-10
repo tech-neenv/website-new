@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import { CheckCircle, Send } from 'lucide-react';
+import ConsentCheckbox from '@/components/forms/ConsentCheckbox';
 import styles from './PartnerApplicationForm.module.css';
 
 type FormState = {
@@ -48,6 +49,8 @@ const PartnerApplicationForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    // DPDP consent — unticked by default; the form cannot be submitted without it.
+    const [hasConsented, setHasConsented] = useState(false);
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -83,6 +86,13 @@ const PartnerApplicationForm = () => {
             companyName: form.institutionName,
             companyType: 'financial-institution',
             message: details.join('\n'),
+            // Recorded so we can evidence that consent was validly obtained.
+            consent: {
+                given: hasConsented,
+                statement:
+                    'I consent to Neenv collecting and processing my data as per the Privacy Policy',
+                timestamp: new Date().toISOString(),
+            },
         };
 
         try {
@@ -266,7 +276,18 @@ const PartnerApplicationForm = () => {
                                     </p>
                                 )}
 
-                                <button type="submit" className={styles.submit} disabled={isSubmitting}>
+                                {/* DPDP consent — required, unticked by default */}
+                                <ConsentCheckbox
+                                    id="partnerConsent"
+                                    checked={hasConsented}
+                                    onChange={setHasConsented}
+                                />
+
+                                <button
+                                    type="submit"
+                                    className={styles.submit}
+                                    disabled={isSubmitting || !hasConsented}
+                                >
                                     {isSubmitting ? 'Sending…' : 'Submit Enquiry'}
                                     {!isSubmitting && <Send size={16} strokeWidth={2} />}
                                 </button>

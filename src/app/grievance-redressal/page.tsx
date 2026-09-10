@@ -51,7 +51,7 @@ export default function GrievanceRedressalPage() {
                                 <ul className={styles.list}>
                                     <li><strong>Email:</strong> <a href="mailto:Info@neenvfin.com">Info@neenvfin.com</a></li>
                                     <li><strong>Contact form:</strong> the enquiry form on our <a href="/contact">Contact Us</a> page</li>
-                                    <li><strong>Post:</strong> at the registered office address listed in Section 6 below</li>
+                                    <li><strong>Post:</strong> at the registered office address listed in Section 7 below</li>
                                 </ul>
                                 <p>
                                     To help us resolve your complaint quickly, please include your name, registered mobile number or email, your company name, the nature of the issue, and any reference or transaction number available to you.
@@ -80,6 +80,12 @@ export default function GrievanceRedressalPage() {
                                 <p>
                                     The Grievance Officer will review the matter independently and respond within <strong>15 working days</strong> of the escalation.
                                 </p>
+                                <p>
+                                    Every grievance, whatever its route, is resolved as early as possible and <strong>in any event no later than 90 days</strong> from the date it is first registered with us. This outer limit applies to all complaints, including grievances relating to your personal data raised under Section 13 of the Digital Personal Data Protection Act, 2023.
+                                </p>
+                                <p>
+                                    Grievances concerning your personal data &mdash; access, correction, erasure, nomination, or withdrawal of consent &mdash; may be sent to the same Grievance Officer. Please mark the subject line &quot;Data Rights Request&quot; so it is routed correctly. What to include, and the rights available to you, are set out in the <a href="/legal#data-rights">Data Rights</a> section of our Legal &amp; Privacy page and in our <a href="/privacy-policy">Privacy Policy</a>.
+                                </p>
                             </div>
                         </section>
 
@@ -106,7 +112,7 @@ export default function GrievanceRedressalPage() {
                                                 <td>
                                                     <p><strong>Fexprime Finance Pvt. Ltd.</strong></p>
                                                     <p>(Formerly known as Bussan Auto Finance India Pvt. Ltd.)</p>
-                                                    <p>CIN: U66190HR2025PTC135907</p>
+                                                    <p>CIN: U67190DL2022PTC407908</p>
                                                     <p>Address: 2-E/8, 3rd and 4th Floor, Jhandewalan Extension, New Delhi, 110055</p>
                                                 </td>
                                             </tr>
@@ -175,10 +181,36 @@ export default function GrievanceRedressalPage() {
                         </section>
 
                         <section className={styles.section}>
-                            <h2 className={styles.sectionTitle}>6. Corporate Office</h2>
+                            <h2 className={styles.sectionTitle}>6. Data Protection Grievances &amp; the Data Protection Board</h2>
+                            <div className={styles.sectionContent}>
+                                <p>
+                                    Where your grievance concerns our handling of your personal data &mdash; rather than a credit facility &mdash; a separate escalation path applies under the Digital Personal Data Protection Act, 2023.
+                                </p>
+                                <p>
+                                    Raise the matter first with our Grievance Officer at Level 2 above. We will acknowledge it within <strong>3 working days</strong> and resolve it as early as possible, and in any event <strong>within 90 days</strong> of registration.
+                                </p>
+                                <p>
+                                    If you are not satisfied with our response, or we fail to respond within that period, you may then complain to the <strong>Data Protection Board of India</strong> &mdash; the adjudicating authority established under Chapter V of the Digital Personal Data Protection Act, 2023. Complaints are made in the manner and form prescribed by the Digital Personal Data Protection Rules, 2025, and the Board publishes its procedure and contact details on its official website.
+                                </p>
+                                <p>
+                                    Exhausting our internal grievance process is a precondition to approaching the Board. The Board handles data protection complaints only; complaints about a credit facility continue to follow Levels 3 and 4 above, and both routes may apply where a complaint has elements of each.
+                                </p>
+                                <p>
+                                    Full detail of your rights, our retention periods, and our data breach commitments is set out in our <a href="/privacy-policy">Privacy Policy</a> and in the <a href="/legal#data-rights">Data Rights</a> section of our Legal &amp; Privacy page.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section className={styles.section}>
+                            <h2 className={styles.sectionTitle}>7. Our Offices</h2>
                             <div className={styles.sectionContent}>
                                 <div className={styles.contactInfo}>
                                     <p><strong>NEENV FINANCIAL TECHNOLOGIES PRIVATE LIMITED</strong></p>
+                                    <p>CIN: U66190HR2025PTC135907</p>
+                                    <p><strong>Registered Office:</strong></p>
+                                    <p>B-90, 3rd Floor, Greenwood City, Sector-45,</p>
+                                    <p>Gurugram, Haryana &ndash; 122003, India</p>
+                                    <p><strong>Corporate Office:</strong></p>
                                     <p>Teloz Spaces, 1st Floor, AJ House, Marol Maroshi Road,</p>
                                     <p>Marol, Andheri East, Mumbai &ndash; 400059, Maharashtra, India</p>
                                     <p>Email: <a href="mailto:Info@neenvfin.com">Info@neenvfin.com</a></p>
@@ -187,7 +219,7 @@ export default function GrievanceRedressalPage() {
                         </section>
 
                         <section className={styles.section}>
-                            <h2 className={styles.sectionTitle}>7. Record Keeping &amp; Review</h2>
+                            <h2 className={styles.sectionTitle}>8. Record Keeping &amp; Review</h2>
                             <div className={styles.sectionContent}>
                                 <p>
                                     All complaints received are logged, tracked to closure, and retained in accordance with applicable law. This policy is reviewed periodically and may be updated to reflect changes in our processes or in regulatory requirements. Any revisions will be published on this page with an updated &quot;Last updated&quot; date.

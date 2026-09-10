@@ -609,3 +609,31 @@
         width: 94%;
     }
 }
+
+/* ===== ACTIVE ROUTE =====
+   Marks the page currently open. Reuses the existing hover/open language
+   (primary text on a tinted pill) rather than introducing a new accent, so an
+   active item reads as "you are here" without competing with the CTA. */
+.productItemActive {
+    background: rgba(26, 45, 122, 0.06);
+}
+
+.productItemActive .productIcon {
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+.productItemActive .productTitle {
+    color: var(--color-primary);
+    font-weight: var(--font-bold);
+}
+
+.productItemActive .productArrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobileNavLinkActive {
+    background: rgba(26, 45, 122, 0.06);
+    color: var(--color-primary);
+}

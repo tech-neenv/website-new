@@ -75,7 +75,7 @@
 }
 
 /* A lone partner gets a larger, centred card rather than a lost-looking chip */
-.staticRow .card {
+.staticRow .card:only-child {
     min-width: 360px;
     padding: var(--space-8) var(--space-10);
     gap: var(--space-6);
@@ -188,7 +188,7 @@
         padding: var(--space-4) var(--space-5);
     }
 
-    .staticRow .card {
+    .staticRow .card:only-child {
         min-width: 0;
         width: 100%;
         max-width: 340px;
