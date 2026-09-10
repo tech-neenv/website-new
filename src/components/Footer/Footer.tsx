@@ -39,10 +39,8 @@ const Footer = () => {
                         <div className={styles.columnLinks}>
                             <Link href="/#how-it-works" className={styles.columnLink}>How It Works</Link>
                             <Link href="/for-financial-institutions" className={styles.columnLink}>For FIs</Link>
-                            {/* Hidden for now — restore both links when the partner network is ready to publicise.
                             <Link href="/capital-partners" className={styles.columnLink}>Capital Partners</Link>
                             <Link href="/become-partner-with-us" className={styles.columnLink}>Become a Partner</Link>
-                            */}
                             <Link href="/about-us" className={styles.columnLink}>About Us</Link>
                         </div>
                     </div>
@@ -64,6 +62,8 @@ const Footer = () => {
                             <Link href="/privacy-policy" className={styles.columnLink}>Privacy Policy</Link>
                             <Link href="/terms-and-conditions" className={styles.columnLink}>Terms &amp; Conditions</Link>
                             <Link href="/grievance-redressal" className={styles.columnLink}>Grievance Redressal</Link>
+                            {/* Consolidated hub: data rights, cookie policy, consent notice, disclosures */}
+                            <Link href="/legal" className={styles.columnLink}>Legal &amp; Privacy</Link>
                         </div>
                     </div>
 
@@ -89,6 +89,9 @@ const Footer = () => {
                         </Link>
                         <Link href="/terms-and-conditions" className={styles.legalLink}>
                             Terms & Conditions
+                        </Link>
+                        <Link href="/legal" className={styles.legalLink}>
+                            Legal &amp; Privacy
                         </Link>
                     </div>
                 </div>
