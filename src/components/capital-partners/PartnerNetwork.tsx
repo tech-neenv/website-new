@@ -6,6 +6,7 @@ import { ArrowUpRight, Landmark } from 'lucide-react';
 import {
     partners,
     partnerCount,
+    servesRawLogo,
     activeCategories,
     countByCategory,
     type Partner,
@@ -27,9 +28,10 @@ const PartnerCard = ({ partner }: { partner: Partner }) => {
                     <Image
                         src={partner.logo}
                         alt={partner.name}
-                        width={1000}
-                        height={200}
+                        width={partner.logoWidth ?? 1000}
+                        height={partner.logoHeight ?? 200}
                         sizes="(max-width: 768px) 240px, 300px"
+                        unoptimized={servesRawLogo(partner.logo)}
                         className={styles.logoImg}
                     />
                 ) : (
