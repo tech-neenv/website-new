@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import ManageCookiesButton from '@/components/CookieConsent/ManageCookiesButton';
+import DataRightsForm from '@/components/forms/DataRightsForm';
 import styles from '../privacy-policy/LegalPage.module.css';
 import hub from './LegalHub.module.css';
 
@@ -28,25 +29,25 @@ const SECTIONS = [
         id: 'data-rights',
         index: 'Section 1',
         title: 'Data Rights',
-        hint: 'Access, correction, erasure, nomination, and how to raise a privacy request.',
+        hint: 'Access, correction, erasure, nomination — and a form to request it.',
     },
     {
         id: 'cookie-policy',
         index: 'Section 2',
         title: 'Cookie Policy',
-        hint: 'What we store, which cookies are optional, and how to change your choice.',
+        hint: 'What we store, what is optional, how to change your choice.',
     },
     {
         id: 'consent-notice',
         index: 'Section 3',
         title: 'Consent Notice',
-        hint: 'What we collect, why, who it is shared with, and how to withdraw consent.',
+        hint: 'What we collect, why, who it reaches, how to withdraw.',
     },
     {
         id: 'disclosures',
         index: 'Section 4',
         title: 'Disclosures',
-        hint: 'Company identity, offices, lending partners, and our regulatory status.',
+        hint: 'Company identity, offices, partners, regulatory status.',
     },
 ];
 
@@ -147,11 +148,18 @@ export default function LegalPage() {
                                     your request.
                                 </p>
 
-                                <h3 className={styles.subTitle}>1.2 How to submit a request</h3>
+                                <h3 className={styles.subTitle}>1.2 Submit a request</h3>
                                 <p>
-                                    Send your request by email to the Data Privacy contact below. To
-                                    help us identify your records and respond accurately, please
-                                    include:
+                                    Use the form below to exercise any of these rights. It goes
+                                    directly to our Grievance Officer.
+                                </p>
+
+                                <DataRightsForm />
+
+                                <p>
+                                    You may also write to the Data Privacy contact in Section 1.4
+                                    instead, marking your email subject line &quot;Data Rights
+                                    Request&quot;. Whichever route you use, please include:
                                 </p>
                                 <ul className={styles.list}>
                                     <li>your full name and the company you are associated with;</li>
@@ -199,9 +207,20 @@ export default function LegalPage() {
                                 <p>
                                     Privacy requests and data-related complaints are handled
                                     separately from sales and partnership enquiries. Please use the
-                                    contact below rather than the general enquiry form &mdash; it
-                                    reaches our Grievance Officer directly.
+                                    form in Section 1.2 above, or the contact below &mdash; both
+                                    reach our Grievance Officer directly, and neither goes to our
+                                    sales team. Use this route for:
                                 </p>
+                                <ul className={styles.list}>
+                                    <li>a copy of the personal data we hold about you;</li>
+                                    <li>correction, completion, or updating of that data;</li>
+                                    <li>erasure or deletion of your data;</li>
+                                    <li>nominating someone to exercise your rights;</li>
+                                    <li>
+                                        withdrawing consent, in full or for a specific purpose; and
+                                    </li>
+                                    <li>complaints about how we have handled your data.</li>
+                                </ul>
                                 <div className={styles.contactInfo}>
                                     <p className={hub.calloutTitle}>
                                         Data Privacy &amp; Grievance Contact
@@ -230,6 +249,18 @@ export default function LegalPage() {
                                     <Link href="/grievance-redressal">Grievance Redressal Policy</Link>
                                     .
                                 </p>
+
+                                <div className={hub.actions}>
+                                    <Link href="/privacy-policy" className={hub.actionLink}>
+                                        Privacy Policy
+                                    </Link>
+                                    <Link href="/grievance-redressal" className={hub.actionLink}>
+                                        Grievance Redressal Policy
+                                    </Link>
+                                    <Link href="/contact" className={hub.actionLink}>
+                                        Sales &amp; general enquiries
+                                    </Link>
+                                </div>
                             </div>
                         </section>
 
@@ -624,15 +655,12 @@ export default function LegalPage() {
                                                 <th scope="row">Company name</th>
                                                 <td>NEENV FINANCIAL TECHNOLOGIES PRIVATE LIMITED</td>
                                             </tr>
-                                            {/* TODO: replace with the company CIN once confirmed from the MCA record */}
                                             <tr>
                                                 <th scope="row">CIN</th>
-                                                <td className={hub.pending}>
-                                                    To be updated on confirmation of the MCA record
-                                                </td>
+                                                <td>U66190HR2025PTC135907</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">Registered office</th>
+                                                <th scope="row"> Corporate office</th>
                                                 <td>
                                                     <p>
                                                         Teloz Spaces, 1st Floor, AJ House, Marol
@@ -645,7 +673,7 @@ export default function LegalPage() {
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">Corporate office</th>
+                                                <th scope="row">Registered office</th>
                                                 <td>
                                                     <p>B-90, 3rd Floor, Greenwood City, Sector-45,</p>
                                                     <p>Gurugram, Haryana &ndash; 122003, India</p>
@@ -719,7 +747,7 @@ export default function LegalPage() {
                                                         (Formerly known as Bussan Auto Finance India
                                                         Pvt. Ltd.)
                                                     </p>
-                                                    <p>CIN: U66190HR2025PTC135907</p>
+                                                    <p>CIN: U67190DL2022PTC407908</p>
                                                     <p>
                                                         Address: 2-E/8, 3rd and 4th Floor, Jhandewalan
                                                         Extension, New Delhi, 110055
