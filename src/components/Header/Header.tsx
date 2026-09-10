@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { ChevronDown, ArrowRight, Layers, HandCoins, Landmark, FileStack } from 'lucide-react';
 import styles from './Header.module.css';
 
@@ -39,6 +40,17 @@ const Header = () => {
     const [isProductsOpen, setIsProductsOpen] = useState(false);
     const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
+    const pathname = usePathname();
+
+    /**
+     * True when a nav link points at the page currently open. Links carrying a
+     * hash target a section rather than a page of their own, so they are never
+     * marked — otherwise "How It Works" would light up on every homepage visit.
+     */
+    const isActive = (href: string) => !href.includes('#') && pathname === href;
+
+    /** The Products trigger reflects the section, not a single page. */
+    const isProductsSectionActive = pathname.startsWith('/products/');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -110,7 +122,7 @@ const Header = () => {
                             onMouseLeave={() => setIsProductsOpen(false)}
                         >
                             <button
-                                className={`${styles.navLink} ${styles.dropdownTrigger} ${isProductsOpen ? styles.active : ''}`}
+                                className={`${styles.navLink} ${styles.dropdownTrigger} ${isProductsOpen || isProductsSectionActive ? styles.active : ''}`}
                                 onClick={() => setIsProductsOpen(!isProductsOpen)}
                             >
                                 Products
@@ -130,7 +142,8 @@ const Header = () => {
                                             <Link
                                                 key={product.title}
                                                 href={product.href}
-                                                className={styles.productItem}
+                                                className={`${styles.productItem} ${isActive(product.href) ? styles.productItemActive : ''}`}
+                                                aria-current={isActive(product.href) ? 'page' : undefined}
                                                 onClick={() => setIsProductsOpen(false)}
                                             >
                                                 <div className={styles.productIcon}>{product.icon}</div>
@@ -152,7 +165,11 @@ const Header = () => {
                         <ul className={styles.navLinks}>
                             {navItems.map((item) => (
                                 <li key={item.label}>
-                                    <Link href={item.href} className={styles.navLink}>
+                                    <Link
+                                        href={item.href}
+                                        className={`${styles.navLink} ${isActive(item.href) ? styles.active : ''}`}
+                                        aria-current={isActive(item.href) ? 'page' : undefined}
+                                    >
                                         {item.label}
                                     </Link>
                                 </li>
@@ -214,7 +231,8 @@ const Header = () => {
                                     <Link
                                         key={product.title}
                                         href={product.href}
-                                        className={styles.mobileProductItem}
+                                        className={`${styles.mobileProductItem} ${isActive(product.href) ? styles.productItemActive : ''}`}
+                                        aria-current={isActive(product.href) ? 'page' : undefined}
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         <div className={styles.productIcon}>{product.icon}</div>
@@ -232,7 +250,8 @@ const Header = () => {
                             <Link
                                 key={item.label}
                                 href={item.href}
-                                className={styles.mobileNavLink}
+                                className={`${styles.mobileNavLink} ${isActive(item.href) ? styles.mobileNavLinkActive : ''}`}
+                                aria-current={isActive(item.href) ? 'page' : undefined}
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 {item.label}
