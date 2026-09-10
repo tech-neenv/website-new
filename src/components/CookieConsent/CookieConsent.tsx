@@ -55,16 +55,15 @@ const CookieConsent = () => {
         >
             <div className={styles.panel}>
                 <h2 id="cookie-consent-title" className={styles.title}>
-                    <Cookie size={16} aria-hidden="true" style={{ verticalAlign: '-2px', marginRight: '8px' }} />
+                    <Cookie size={14} aria-hidden="true" style={{ verticalAlign: '-2px', marginRight: '6px' }} />
                     Cookies on neenvfin.com
                 </h2>
 
                 {showPreferences ? (
                     <>
                         <p className={styles.description}>
-                            Choose which cookies we may use. Necessary cookies keep the site working
-                            and cannot be turned off. Everything else is off unless you switch it on.
-                            Read the full{' '}
+                            Necessary cookies keep the site working and cannot be turned off.
+                            Everything else is off unless you switch it on. Read the full{' '}
                             <Link href="/legal#cookie-policy">Cookie Policy</Link>.
                         </p>
 
@@ -123,10 +122,8 @@ const CookieConsent = () => {
                 ) : (
                     <>
                         <p className={styles.description}>
-                            We use strictly necessary cookies to run this website. With your
-                            permission we would also use Google Analytics to see how the site is
-                            used. Analytics cookies stay switched off until you accept them. You can
-                            change or withdraw your choice at any time from our{' '}
+                            We use necessary cookies to run this site, and Google Analytics only if
+                            you allow it. Change your choice any time in our{' '}
                             <Link href="/legal#cookie-policy">Cookie Policy</Link>.
                         </p>
 
