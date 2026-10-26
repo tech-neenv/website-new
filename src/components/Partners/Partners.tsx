@@ -3,34 +3,39 @@ import { ArrowUpRight, Landmark } from 'lucide-react';
 import styles from './Partners.module.css';
 import { partners, type Partner } from '@/data/partners';
 
-/* Below this many cards the row can't fill the screen, so it renders centred and static
-   instead of scrolling a near-empty strip. Add a 5th partner and the marquee kicks in. */
-const MIN_CARDS_TO_SCROLL = 5;
+/* A single partner has nothing to scroll past, so it renders centred and static.
+   From two upwards the marquee keeps them on one continuous row. */
+const MIN_CARDS_TO_SCROLL = 2;
 /* A scrolling track repeats the set until it comfortably overflows the widest viewport. */
 const MIN_CARDS_ON_TRACK = 10;
 
 const PartnerCard = ({ partner, duplicate = false }: { partner: Partner; duplicate?: boolean }) => {
     const inner = (
         <>
-            {partner.logo ? (
-                <Image
-                    src={partner.logo}
-                    alt={partner.name}
-                    width={1000}
-                    height={200}
-                    sizes="(max-width: 768px) 220px, 300px"
-                    className={styles.logoImg}
-                />
-            ) : (
-                <>
-                    <span className={styles.logoWrap}>
-                        <Landmark size={22} strokeWidth={1.5} />
+            {/* Fixed-size plate: logos of any aspect ratio land on the same optical footprint,
+                so the row reads as one wall instead of mismatched wordmarks. */}
+            <span className={styles.logoPlate}>
+                {partner.logo ? (
+                    <Image
+                        src={partner.logo}
+                        alt={partner.name}
+                        width={1000}
+                        height={200}
+                        sizes="(max-width: 768px) 180px, 200px"
+                        className={styles.logoImg}
+                        /* The optimizer refuses SVG unless it is allowed globally, and a
+                           vector logo gains nothing from it — serve those as-is. */
+                        unoptimized={partner.logo.endsWith('.svg')}
+                    />
+                ) : (
+                    <span className={styles.fallback}>
+                        <Landmark size={20} strokeWidth={1.5} />
+                        <span className={styles.name}>{partner.name}</span>
                     </span>
-                    <span className={styles.name}>{partner.name}</span>
-                </>
-            )}
+                )}
+            </span>
             {partner.url && (
-                <span className={styles.arrow}>
+                <span className={styles.arrow} aria-hidden="true">
                     <ArrowUpRight size={14} strokeWidth={2} />
                 </span>
             )}
@@ -62,21 +67,19 @@ const Partners = () => {
     /* Number of identical groups on the track. The animation shifts by exactly one
        group width — 100% / repeat — so the loop is seamless at any partner count. */
     const repeat = Math.max(2, Math.ceil(MIN_CARDS_ON_TRACK / count));
-    /* Scale duration with the group width to keep the scroll speed constant. */
-    const duration = Math.max(count * 4, 12);
+    /* Scale duration with the group width so the strip always travels at roughly
+       the same unhurried pace, whatever the partner count. */
+    const duration = Math.max(count * 7, 20);
 
     return (
         <section id="partners" className={styles.partners}>
             <div className="container">
                 <div className={styles.header}>
                     <span className={`${styles.badge} badge-animated`}>OUR LENDING PARTNERS</span>
-                    <h2 className={styles.title}>
-                        {count === 1
-                            ? 'Backed by Our NBFC Lending Partner'
-                            : `Backed by ${count} NBFC Partners`}
-                    </h2>
+                    {/* Deliberately count-free — the headline shouldn't churn as partners are added. */}
+                    <h2 className={styles.title}>Backed by Leading Lending Partners</h2>
                     <p className={styles.subtitle}>
-                        Neenv originates and manages the assets. Our NBFC lending partners bring
+                        Neenv originates and manages the assets. Our lending partners bring
                         the capital — so channel partners get sanctioned faster, at scale.
                     </p>
                 </div>

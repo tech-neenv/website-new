@@ -63,3 +63,6 @@ logs
 .cache/
 .eslintcache
 .stylelintcache
+
+# Claude Code local settings (machine-specific tool permissions)
+.claude/settings.local.json

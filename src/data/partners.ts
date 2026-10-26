@@ -31,6 +31,41 @@ export const partners: Partner[] = [
            products or limits on a third party's behalf without sign-off. */
         description: 'NBFC lending partner backing Neenv-originated channel finance.',
     },
+    {
+        name: 'Karnataka Bank',
+        url: 'https://karnatakabank.com/',
+        logo: '/images/partners/karnataka-bank.webp',
+        category: 'Bank',
+        description: 'Banking partner supporting Neenv channel finance programmes.',
+    },
+    {
+        name: 'AU Small Finance Bank',
+        url: 'https://www.au.bank.in/',
+        logo: '/images/partners/au-small-finance-bank.svg',
+        category: 'Bank',
+        description: 'Banking partner supporting Neenv channel finance programmes.',
+    },
+    {
+        name: 'Cholamandalam',
+        url: 'https://www.cholamandalam.com/',
+        logo: '/images/partners/chola.svg',
+        category: 'NBFC',
+        description: 'NBFC lending partner backing Neenv-originated channel finance.',
+    },
+    {
+        name: 'IDFC FIRST Bank',
+        url: 'https://www.idfcfirstbank.com/',
+        logo: '/images/partners/idfc-first-bank.svg',
+        category: 'Bank',
+        description: 'Banking partner supporting Neenv channel finance programmes.',
+    },
+    {
+        name: 'Unity Small Finance Bank',
+        url: 'https://theunitybank.com/',
+        logo: '/images/partners/unity-small-finance-bank.png',
+        category: 'Bank',
+        description: 'Banking partner supporting Neenv channel finance programmes.',
+    },
 ];
 
 export const partnerCount = partners.length;

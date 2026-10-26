@@ -6,6 +6,9 @@ import Image from 'next/image';
 import { ChevronDown, ArrowRight, Layers, HandCoins, Landmark, FileStack } from 'lucide-react';
 import styles from './Header.module.css';
 
+/** Borrower / partner portal — a separate app, so it is a plain external link. */
+const APP_SIGN_IN_URL = 'https://app.neenvfin.com/';
+
 const products = [
     {
         title: 'Channel Financing',
@@ -161,13 +164,18 @@ const Header = () => {
                         </ul>
 
                         <div className={styles.navActions}>
-                            {/* <Link href="/contact" className={styles.contactLink}>
+                            <Link href="/contact" className={styles.secondaryAction}>
                                 Contact Us
-                            </Link> */}
-                            <Link href="/contact" className={styles.ctaButton}>
-                                Get Started
-                                <ArrowRight size={16} strokeWidth={2} />
                             </Link>
+                            <a
+                                href={APP_SIGN_IN_URL}
+                                className={styles.ctaButton}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Sign In
+                                <ArrowRight size={16} strokeWidth={2} />
+                            </a>
                         </div>
                     </nav>
 
@@ -249,14 +257,16 @@ const Header = () => {
                         >
                             Contact Us
                         </Link>
-                        <Link
-                            href="/contact"
+                        <a
+                            href={APP_SIGN_IN_URL}
                             className={styles.mobileCtaButton}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
-                            Get Started
+                            Sign In
                             <ArrowRight size={16} strokeWidth={2} />
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>
