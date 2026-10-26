@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, Building2, ShieldCheck, ArrowRight } from 'lucide-react';
+import ConsentCheckbox from '@/components/forms/ConsentCheckbox';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import styles from './ContactPage.module.css';
@@ -28,6 +29,8 @@ export default function ContactPage() {
     const [formData, setFormData] = useState<FormData>(initialFormData);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    // DPDP consent — unticked by default; the form cannot be submitted without it.
+    const [hasConsented, setHasConsented] = useState(false);
 
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -44,7 +47,16 @@ export default function ContactPage() {
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    // Recorded so we can evidence that consent was validly obtained.
+                    consent: {
+                        given: hasConsented,
+                        statement:
+                            'I consent to Neenv collecting and processing my data as per the Privacy Policy',
+                        timestamp: new Date().toISOString(),
+                    },
+                }),
             });
 
             if (!response.ok) {
@@ -52,6 +64,7 @@ export default function ContactPage() {
             }
 
             setIsSubmitted(true);
+            setHasConsented(false);
         } catch (error) {
             console.error('Submit error:', error);
             alert('Something went wrong. Please try again or email us directly at Info@neenvfin.com');
@@ -234,11 +247,18 @@ export default function ContactPage() {
                                             />
                                         </div>
 
+                                        {/* DPDP consent — required, unticked by default */}
+                                        <ConsentCheckbox
+                                            id="contactConsent"
+                                            checked={hasConsented}
+                                            onChange={setHasConsented}
+                                        />
+
                                         {/* Submit Button */}
                                         <button
                                             type="submit"
                                             className={styles.submitButton}
-                                            disabled={isSubmitting}
+                                            disabled={isSubmitting || !hasConsented}
                                         >
                                             {isSubmitting ? (
                                                 'Sending...'
@@ -276,11 +296,10 @@ export default function ContactPage() {
                                 </div>
 
                                 <div className={styles.detailGrid}>
-                                    {/* TODO: add the company CIN once confirmed from the MCA record */}
                                     <div className={styles.detailRow}>
                                         <span className={styles.detailLabel}>CIN</span>
-                                        <span className={`${styles.detailValue} ${styles.pending}`}>
-                                            &mdash;
+                                        <span className={styles.detailValue}>
+                                            U66190HR2025PTC135907
                                         </span>
                                     </div>
 
@@ -296,8 +315,8 @@ export default function ContactPage() {
                                             Registered Office Address
                                         </span>
                                         <span className={styles.detailValue}>
-                                            Teloz Spaces, 1st Floor, AJ House, Marol Maroshi Road,
-                                            Marol, Andheri East, Mumbai, Maharashtra &ndash; 400059
+                                            B-90, 3rd Floor, Greenwood City, Sector-45, Gurugram,
+                                            Haryana &ndash; 122003
                                         </span>
                                     </div>
 
@@ -306,8 +325,8 @@ export default function ContactPage() {
                                             Corporate Office Address
                                         </span>
                                         <span className={styles.detailValue}>
-                                            B-90, 3rd Floor, Greenwood City, Sector-45, Gurugram,
-                                            Haryana &ndash; 122003
+                                            Teloz Spaces, 1st Floor, AJ House, Marol Maroshi Road,
+                                            Marol, Andheri East, Mumbai, Maharashtra &ndash; 400059
                                         </span>
                                     </div>
 

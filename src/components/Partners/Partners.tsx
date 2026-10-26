@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import { ArrowUpRight, Landmark } from 'lucide-react';
 import styles from './Partners.module.css';
-import { partners, type Partner } from '@/data/partners';
+import { partners, servesRawLogo, type Partner } from '@/data/partners';
 
 /* A single partner has nothing to scroll past, so it renders centred and static.
-   From two upwards the marquee keeps them on one continuous row. */
+   From two upwards the marquee keeps them on one continuous row, which also beats
+   a tall stack of full-width cards on mobile. */
 const MIN_CARDS_TO_SCROLL = 2;
 /* A scrolling track repeats the set until it comfortably overflows the widest viewport. */
 const MIN_CARDS_ON_TRACK = 10;
@@ -19,13 +20,11 @@ const PartnerCard = ({ partner, duplicate = false }: { partner: Partner; duplica
                     <Image
                         src={partner.logo}
                         alt={partner.name}
-                        width={1000}
-                        height={200}
+                        width={partner.logoWidth ?? 1000}
+                        height={partner.logoHeight ?? 200}
                         sizes="(max-width: 768px) 180px, 200px"
+                        unoptimized={servesRawLogo(partner.logo)}
                         className={styles.logoImg}
-                        /* The optimizer refuses SVG unless it is allowed globally, and a
-                           vector logo gains nothing from it — serve those as-is. */
-                        unoptimized={partner.logo.endsWith('.svg')}
                     />
                 ) : (
                     <span className={styles.fallback}>

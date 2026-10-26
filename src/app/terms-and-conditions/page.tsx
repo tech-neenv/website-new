@@ -36,7 +36,7 @@ export default function TermsAndConditionsPage() {
                             <h2 className={styles.sectionTitle}>1. About These Terms</h2>
                             <div className={styles.sectionContent}>
                                 <p>
-                                    Neenv is operated by NEENV FINANCIAL TECHNOLOGIES PRIVATE LIMITED, a company incorporated in India with its registered office at Teloz Spaces, 1st Floor, AJ House, Marol Maroshi Road, Marol, Andheri East, Mumbai, Maharashtra &ndash; 400059. In these Terms we refer to it as &quot;Neenv&quot;, &quot;we&quot; or &quot;us&quot;, and to you as &quot;you&quot;.
+                                    Neenv is operated by NEENV FINANCIAL TECHNOLOGIES PRIVATE LIMITED, a company incorporated in India (CIN: U66190HR2025PTC135907) with its registered office at B-90, 3rd Floor, Greenwood City, Sector-45, Gurugram, Haryana &ndash; 122003. In these Terms we refer to it as &quot;Neenv&quot;, &quot;we&quot; or &quot;us&quot;, and to you as &quot;you&quot;.
                                 </p>
                                 <p>
                                     These Terms set out the basis on which you may use www.neenvfin.com and any related portal, application or interface we operate (together, the &quot;Platform&quot;). They work alongside our Privacy Policy and our Grievance Redressal Policy, both of which form part of your agreement with us.
@@ -433,8 +433,8 @@ export default function TermsAndConditionsPage() {
                                 </p>
                                 <div className={styles.contactInfo}>
                                     <p><strong>NEENV FINANCIAL TECHNOLOGIES PRIVATE LIMITED</strong></p>
-                                    <p>Registered Office: Teloz Spaces, 1st Floor, AJ House, Marol Maroshi Road, Marol, Andheri East, Mumbai, Maharashtra &ndash; 400059</p>
-                                    <p>Corporate Office: B-90, 3rd Floor, Greenwood City, Sector-45, Gurugram, Haryana &ndash; 122003</p>
+                                    <p>Registered Office: B-90, 3rd Floor, Greenwood City, Sector-45, Gurugram, Haryana &ndash; 122003</p>
+                                    <p>Corporate Office: Teloz Spaces, 1st Floor, AJ House, Marol Maroshi Road, Marol, Andheri East, Mumbai, Maharashtra &ndash; 400059</p>
                                     <p>Email: <a href="mailto:Info@neenvfin.com">Info@neenvfin.com</a></p>
                                     <p>Phone: <a href="tel:+917738735740">+91 77387 35740</a></p>
                                 </div>

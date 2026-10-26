@@ -1,6 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
+/** Consent record captured with the submission, for DPDP evidencing. */
+type ConsentRecord = {
+    given: boolean;
+    statement: string;
+    timestamp: string;
+};
+
 type ContactForm = {
     name: string;
     email: string;
@@ -8,6 +15,7 @@ type ContactForm = {
     companyName: string;
     companyType: string;
     message: string;
+    consent?: ConsentRecord;
 };
 
 const companyTypeLabels: Record<string, string> = {
@@ -60,6 +68,11 @@ function buildEmailHtml(data: ContactForm): string {
 
         <div style="padding: 16px 32px; background: #f8f9fa; border-top: 1px solid #f0f0f0;">
             <p style="margin: 0; font-size: 12px; color: #999;">Sent from neenvfin.com contact form</p>
+            ${data.consent?.given ? `
+            <p style="margin: 8px 0 0; font-size: 12px; color: #999;">
+                Consent recorded: &ldquo;${data.consent.statement}&rdquo; &mdash; ${data.consent.timestamp}
+            </p>
+            ` : ''}
         </div>
     </div>
     `;
@@ -84,6 +97,15 @@ export async function POST(request: NextRequest) {
         if (!data.name || !data.email || !data.phone || !data.companyName || !data.companyType) {
             return NextResponse.json(
                 { error: 'Missing required fields' },
+                { status: 400 }
+            );
+        }
+
+        // Consent is enforced server-side too, so a submission that bypasses the
+        // browser control is rejected rather than processed without a basis.
+        if (!data.consent?.given) {
+            return NextResponse.json(
+                { error: 'Consent is required to process this enquiry' },
                 { status: 400 }
             );
         }

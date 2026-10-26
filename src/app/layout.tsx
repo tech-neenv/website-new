@@ -4,6 +4,7 @@ import ScrollAnimationProvider from '@/components/ScrollAnimationProvider';
 import FinanceElements from '@/components/FinanceElements/FinanceElements';
 import { OrganizationSchema, WebSiteSchema, SiteNavigationSchema } from '@/components/seo/StructuredData';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
+import CookieConsent from '@/components/CookieConsent/CookieConsent';
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://www.neenvfin.com'),
@@ -86,6 +87,7 @@ export default function RootLayout({
                         {children}
                     </ScrollAnimationProvider>
                 </div>
+                <CookieConsent />
             </body>
         </html>
     );
